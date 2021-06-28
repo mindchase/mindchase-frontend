@@ -2,3 +2,4 @@
 2 add navbar
 npm i bootstrap reactstrap react-social-login-buttons
 npm i react-router-dom
+ud
