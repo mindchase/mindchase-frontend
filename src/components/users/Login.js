@@ -16,7 +16,6 @@ const Login=()=>{
     }
 
 
-
     const paperStyle={padding :25,height:'78vh',width:310, margin:"20px auto"}
     const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
@@ -27,7 +26,7 @@ const Login=()=>{
 
                 <Grid align='center'>
                         <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
-                    <h2>Sign In</h2>
+                    <h2>Welcome to digital campus</h2>
                 </Grid>
 
                 <TextField label='Username' placeholder='Enter username' fullWidth required
