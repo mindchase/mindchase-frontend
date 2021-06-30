@@ -6,9 +6,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 
-const Login=()=>{
+const Registration=()=>{
 
-    const { register, formState: { errors },handleSubmit} = useForm()
+    const { register, formState: { errors },handleSubmit , watch } = useForm()
 
     const submit = (data) => {
         // send data to backend
@@ -29,7 +29,9 @@ const Login=()=>{
                     <h2>Welcome to digital campus</h2>
                 </Grid>
 
-            
+                <TextField label='Username' placeholder='Enter username' fullWidth required
+                    {...register("user", {required: true})}   />
+
                 <TextField label='your Email please' placeholder='Enter Email' 
                 {...register("email", {required: true, pattern: /^\S+@\S+$/i})}
                 fullWidth required/>
@@ -38,7 +40,11 @@ const Login=()=>{
                 {...register("password", {required: true, minLength: 8})} />
                 {errors.password && <div>Password is required</div>}
 
-               
+                <TextField label='Password repeat' placeholder='rPassword repeat' type='password' fullWidth required
+               {...register("password_repeat", {validate: (value) => {
+                return value === watch('password'); // value is from password_repeat and watch will return value from password
+                }})} />
+                  {errors.password_repeat && <div>Password is not the same</div>}
                 <FormControlLabel control={
                         <Checkbox
                             name="checkedB"
@@ -57,4 +63,4 @@ const Login=()=>{
     )
 }
 
-export default Login
+export default Registration
