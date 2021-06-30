@@ -1,24 +1,22 @@
-import './App.css';
-import Sidebar from './components/Sidebar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import DailyLife from './pages/DailyLife';
-import { Reports, ReportsOne, ReportsTwo, ReportsThree } from './pages/Reports';
-import Team from './pages/Team';
+import React from 'react';
+import { ThemeProvider, CssBaseline } from '@material-ui/core';
+import HomeBanner from './components/HomeBanner/HomeBanner';
+import Navbar from './components/Navbar/Navbar';
+import theme from './utils/theme';
+import FooterComponent from './components/FooterComponent/FooterComponent';
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <Sidebar />
-      <Switch>
-        <Route path='/DailyLife' exact component={DailyLife} />
-        <Route path='/reports' exact component={Reports} />
-        <Route path='/reports/reports1' exact component={ReportsOne} />
-        <Route path='/reports/reports2' exact component={ReportsTwo} />
-        <Route path='/reports/reports3' exact component={ReportsThree} />
-        <Route path='/team' exact component={Team} />
-      </Switch>
-    </Router>
+    <>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Navbar />
+        <HomeBanner />
+
+        <FooterComponent />
+      </ThemeProvider>
+    </>
   );
-}
+};
 
 export default App;
