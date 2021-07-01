@@ -8,7 +8,14 @@ import {
   Switch,
 } from "react-router-dom";
 import Login from "./components/users/Login";
-import { Button } from "@material-ui/core";
+import { Button, ThemeProvider, CssBaseline } from "@material-ui/core";
+import HomeBanner from './components/HomeBanner/HomeBanner';
+import Navbar from './components/Navbar/Navbar';
+import theme from './utils/theme';
+import FooterComponent from './components/FooterComponent/FooterComponent';
+import axios from 'axios'
+
+axios.defaults.baseUrl = 'http://localhost:3002'
 
 function App() {
   return (
