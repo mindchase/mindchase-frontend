@@ -1,6 +1,5 @@
 import React from "react";
 import Register from './components/users/Registration'
-import "./App.css";
 import {
   Route,
   NavLink,
@@ -8,28 +7,38 @@ import {
   Switch,
 } from "react-router-dom";
 import Login from "./components/users/Login";
-import { Button } from "@material-ui/core";
+import { Button, ThemeProvider, CssBaseline } from "@material-ui/core";
+import HomeBanner from './components/HomeBanner/HomeBanner';
+import Navbar from './components/Navbar/Navbar';
+import theme from './utils/theme';
+import FooterComponent from './components/FooterComponent/FooterComponent';
 
-function App() {
+const App = () => {
   return (
-    <div>
+    <>
       <Router>
-        <Button component={NavLink} to="/login">
-          Login
-        </Button>
-  
-        <Button component={NavLink} to="/register">
-          Register
-        </Button>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Navbar />
+          <Button component={NavLink} to="/login">
+            Login
+          </Button>
 
-        <Switch>
-          <Route exact path="/login" render={props => <Login {...props} />} />
-          <Route exact path="/register" render={props => <Register {...props} />} />
-        </Switch>
+          <Button component={NavLink} to="/register">
+            Register
+          </Button>
+          <Switch>
+            <Route exact path="/login" render={props => <Login {...props} />} />
+            <Route exact path="/register" render={props => <Register {...props} />} />
+          </Switch>
+          <HomeBanner />
+
+          <FooterComponent />
+        </ThemeProvider>
       </Router>
-    </div>
-  )
-}
+    </>
+  );
+};
 
 export default App;
 
