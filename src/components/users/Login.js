@@ -47,7 +47,7 @@ const Login=()=>{
                 }
                 label="Remember me" />
                 
-                <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
+                <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Login</Button>
 
                 <Typography > Do you have an account ? 
                     <Link href="Register" type="submit" > Sign Up  </Link>
