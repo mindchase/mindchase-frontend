@@ -1,6 +1,5 @@
 import React from "react";
 import Register from './components/users/Registration'
-import "./App.css";
 import {
   Route,
   NavLink,
@@ -17,26 +16,32 @@ import axios from 'axios'
 
 axios.defaults.baseUrl = 'http://localhost:3002'
 
-function App() {
+const App = () => {
   return (
-    <div>
+    <>
       <Router>
-        <Button component={NavLink} to="/login">
-          Login
-        </Button>
-  
-        <Button component={NavLink} to="/register">
-          Register
-        </Button>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Navbar />
+          <Button component={NavLink} to="/login">
+            Login
+          </Button>
 
-        <Switch>
-          <Route exact path="/login" render={props => <Login {...props} />} />
-          <Route exact path="/register" render={props => <Register {...props} />} />
-        </Switch>
+          <Button component={NavLink} to="/register">
+            Register
+          </Button>
+          <Switch>
+            <Route exact path="/login" render={props => <Login {...props} />} />
+            <Route exact path="/register" render={props => <Register {...props} />} />
+          </Switch>
+          <HomeBanner />
+
+          <FooterComponent />
+        </ThemeProvider>
       </Router>
-    </div>
-  )
-}
+    </>
+  );
+};
 
 export default App;
 
