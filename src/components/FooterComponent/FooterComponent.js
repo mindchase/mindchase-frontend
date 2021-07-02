@@ -59,13 +59,13 @@ const FooterComponent = () => {
                       <FcOnlineSupport className={classes.footer_icons} />
                     </ListItemAvatar>
                     <ListItem className={classes.text}>24/7 Support</ListItem>
-                  </ListItem>
+                  </ListItem> 
 
                   <ListItem>
                     <ListItemAvatar>
                       <FcPhone className={classes.footer_icons} />
                     </ListItemAvatar>
-                    <ListItem className={classes.text}>+2338942722</ListItem>
+                    <ListItem className={classes.text}>+49410215455</ListItem>
                   </ListItem>
 
                   <ListItem>

@@ -12,6 +12,9 @@ import HomeBanner from './components/HomeBanner/HomeBanner';
 import Navbar from './components/Navbar/Navbar';
 import theme from './utils/theme';
 import FooterComponent from './components/FooterComponent/FooterComponent';
+import axios from 'axios'
+
+axios.defaults.baseUrl = 'http://localhost:3002'
 
 const App = () => {
   return (
