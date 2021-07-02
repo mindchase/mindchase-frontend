@@ -6,17 +6,15 @@ import {
   BrowserRouter as Router,
   Switch,
 } from "react-router-dom";
-import Login from "./components/users/Login";
 import { Button } from "@material-ui/core";
 import Registration from "./components/Registration";
 import Login from "./components/users/Login";
-import Registration from "./components/Registration";
 import Workshops from "./components/Workshops";
 
 function App() {
   return (
     <Router>
-
+      
       <Button component={NavLink} to="/login">
         Login
       </Button>
@@ -28,15 +26,14 @@ function App() {
         Register
       </Button>
       <Button component={NavLink} to="/workshops">
-        Register
+        Workshops
       </Button>
 
-
       <Switch>
-        <Route path="login"> 
+        <Route path="/login"> 
           <Login />
         </Route>
-        <Route path="workshops">
+        <Route path="/workshops">
           <Workshops />
         </Route>
         <Route path="/">
@@ -45,7 +42,6 @@ function App() {
         <Route path="/register">
           <Registration />
         </Route>
-
       </Switch>
 
       </Router>
