@@ -8,8 +8,6 @@ import Stress from "../../images/11.png";
 import Motiv from "../../images/15.png";
 import Prez from "../../images/19.jpg";
 
-// useEffect axios fetch
-
 // can also do api call and data struct will look the same
 const cardsArr = [
     {
