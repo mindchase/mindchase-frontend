@@ -12,6 +12,12 @@ import {
   useMediaQuery,
   useTheme,
 } from '@material-ui/core';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import DrawerComponent from './DrawerComponent/DrawerComponent';
 import { GiBookAura } from 'react-icons/gi';
@@ -72,7 +78,6 @@ const Navbar = () => {
   const handleCloseMenu = () => {
     setAnchorEl(null);
   };
-
   return (
     <>
       <AppBar elevation={0} color='primary'>
@@ -94,12 +99,15 @@ const Navbar = () => {
                 <Tab
                   disableRipple
                   icon={<FiBookOpen className={classes.icons} />}
-                  label='Courses'
+                  label='Workshop'
+                  
+
                 />
                 <Tab
                   disableRipple
                   icon={<RiMoneyPoundCircleLine className={classes.icons} />}
                   label='Fees'
+
                 />
                 <Tab
                   disableRipple
@@ -147,8 +155,12 @@ const Navbar = () => {
         open={Boolean(anchorEl)}
         onClose={handleCloseMenu}>
         <MenuItem onClick={handleCloseMenu}>My Account</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Examination Results</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Promotions</MenuItem>
+        <Button href="/login" variant="contained">
+      login
+    </Button>
+    <Button href="/register" variant="contained">
+      register
+    </Button>
         <MenuItem onClick={handleCloseMenu}>Pending Fees</MenuItem>
         <MenuItem onClick={handleCloseMenu}>Final Project</MenuItem>
       </Menu>
