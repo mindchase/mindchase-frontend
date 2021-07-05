@@ -1,5 +1,8 @@
 import React from "react";
 import Register from './components/users/Registration'
+import ForgotPassword from './components/users/ForgotPassword'
+import NewPassword from './components/users/NewPassword'
+
 import {
   Route,
   NavLink,
@@ -30,9 +33,14 @@ const App = () => {
           <Button component={NavLink} to="/register">
             Register
           </Button>
+
+
           <Switch>
             <Route exact path="/login" render={props => <Login {...props} />} />
             <Route exact path="/register" render={props => <Register {...props} />} />
+            <Route exact path="/forgotpassword" render={props => <ForgotPassword {...props} />} />
+            <Route exact path="/newpassword" render={props => <NewPassword {...props} />} />
+
           </Switch>
           <HomeBanner />
 
