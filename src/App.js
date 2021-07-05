@@ -9,7 +9,8 @@ import {
 import { Button } from "@material-ui/core";
 import Registration from "./components/Registration";
 import Login from "./components/users/Login";
-import Workshops from "./components/Workshops";
+import Workshops from "./components/Workshops/Workshops";
+import WorkshopsBody from "./components/Workshops/WorkshopsBody";
 
 function App() {
   return (
@@ -28,14 +29,19 @@ function App() {
       <Button component={NavLink} to="/workshops">
         Workshops
       </Button>
-
+      
       <Switch>
         <Route path="/login"> 
           <Login />
         </Route>
-        <Route path="/workshops">
+
+        <Route path="/workshops" exact component={Workshops}>
           <Workshops />
         </Route>
+        <Route path="/workshops/:id">
+          <WorkshopsBody />
+        </Route>
+
         <Route path="/">
           <Login />
         </Route>
