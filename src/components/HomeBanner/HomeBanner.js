@@ -7,7 +7,9 @@ import girl from '../../images/girlBoxingGlove.jpg'
 const useStyles = makeStyles(theme => ({
   conatainer: {
     height: '800px',
-    background: `linear-gradient(rgba(38, 70, 83, .8), rgba(33, 70, 131, .5)), url(${girl})`,
+    background: `linear-gradient(rgba(38, 70, 83, .8), rgba(33, 70, 131, .5)), url(
+      ${girl}
+      )`,
     backgroundPosition: 'contained',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
