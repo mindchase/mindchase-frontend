@@ -2,17 +2,16 @@ import React from 'react';
 import { Container, Hidden, makeStyles, Button } from '@material-ui/core';
 import MainContent from '../MainContent/MainContent';
 import IconsGrid from '../IconsGrid/IconsGrid';
-import girl from '../../images/girlBoxingGlove.jpg'
+import girl from '../../images/Digitalcampus.jpg'
 
 const useStyles = makeStyles(theme => ({
   conatainer: {
-    height: '800px',
-    background: `linear-gradient(rgba(38, 70, 83, .8), rgba(33, 70, 131, .5)), url(
-      ${girl}
-      )`,
+    height: '50vw',
+    width: '100vw',
+    background: `url(${girl})`,
     backgroundPosition: 'contained',
     backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed',
+    // backgroundAttachment: 'fixed',
     backgroundSize: 'cover',
     display: 'flex',
     alignItems: 'center',
@@ -29,6 +28,8 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '20px',
   },
 }));
+
+
 
 const HomeBanner = () => {
   const classes = useStyles();
