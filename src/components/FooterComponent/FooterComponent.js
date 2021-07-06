@@ -82,7 +82,7 @@ const FooterComponent = () => {
           <Grid sm={12} xs={12} md={4}>
             <div className='child3__container'>
               <div className='child3__title'>
-                <h1>About Us</h1>
+                <h1>About Us MindChase</h1>
                 <p className={classes.text}>
                   We are Fun guys , we do fun things and stuff 
                   Learn with us all the new stuff and things 
