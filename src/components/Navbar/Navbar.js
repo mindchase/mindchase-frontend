@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   AppBar,
   makeStyles,
@@ -11,39 +11,39 @@ import {
   MenuItem,
   useMediaQuery,
   useTheme,
-} from '@material-ui/core';
+} from "@material-ui/core";
 
-import DrawerComponent from './DrawerComponent/DrawerComponent';
-import { GiBookAura } from 'react-icons/gi';
-import { FiBookOpen } from 'react-icons/fi';
-import { RiMoneyPoundCircleLine } from 'react-icons/ri';
-import { BsFillPersonPlusFill, BsFillBrightnessHighFill } from 'react-icons/bs';
-import { VscAccount } from 'react-icons/vsc';
+import DrawerComponent from "./DrawerComponent/DrawerComponent";
+import { GiBookAura } from "react-icons/gi";
+import { FiBookOpen } from "react-icons/fi";
+import { RiMoneyPoundCircleLine } from "react-icons/ri";
+import MessageIcon from '@material-ui/icons/Message';
+import { ImHappy } from "react-icons/im";
+import { Link } from "react-router-dom";
 
-import { ImHappy } from 'react-icons/im';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   logo: {
-    fontSize: '1.9rem',
-    [theme.breakpoints.down('md')]: {
-      fontSize: '1.1rem',
+    fontSize: "1.9rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1.1rem",
     },
   },
   acount: {
-    marginLeft: 'auto',
-    '&:hover': {
-      background: 'purple',
+    marginLeft: "auto",
+    "&:hover": {
+      background: "purple",
     },
   },
   tabsContainer: {
-    marginLeft: 'auto',
+    marginLeft: "auto",
   },
   iconLogo: {
-    color: 'yellow',
-    fontSize: '3rem',
+    color: "yellow",
+    fontSize: "3rem",
   },
   icons: {
-    fontSize: '1.4rem',
+    fontSize: "1.4rem",
   },
 }));
 
@@ -58,7 +58,7 @@ const Navbar = () => {
 
   const theme = useTheme(); //Get a copy of our default theme in our component so that we can access the breakpoints and pass the useMediaQuery
 
-  const isMatch = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMatch = useMediaQuery(theme.breakpoints.down("sm"));
 
   //Functions
   const handleClickTab = (e, newValue) => {
@@ -66,7 +66,7 @@ const Navbar = () => {
     setValue(newValue);
   };
 
-  const handleOpenMenu = e => {
+  const handleOpenMenu = (e) => {
     setAnchorEl(e.currentTarget);
   };
   const handleCloseMenu = () => {
@@ -75,7 +75,7 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar elevation={0} color='primary'>
+      <AppBar elevation={0} color="primary">
         <Toolbar>
           <Typography>
             <GiBookAura className={classes.iconLogo} />
@@ -89,50 +89,49 @@ const Navbar = () => {
               <Tabs
                 onChange={handleClickTab}
                 className={classes.tabsContainer}
-                indicatorColor='secondary'
-                value={value}>
+                indicatorColor="secondary"
+                value={value}
+              >
                 <Tab
                   disableRipple
                   icon={<FiBookOpen className={classes.icons} />}
-                  label='Courses'
+                  label="Workshop"
+                  to='/Workshop'
+                  component={Link}
                 />
                 <Tab
                   disableRipple
                   icon={<RiMoneyPoundCircleLine className={classes.icons} />}
-                  label='Fees'
+                  label="Fee"
+                  to='/fees'
+                  component={Link}
+                  
                 />
                 <Tab
                   disableRipple
-                  icon={<BsFillPersonPlusFill className={classes.icons} />}
-                  label='Parents Account'
+                  icon={<MessageIcon className={classes.icons} />}
+                  label="Massges"
+                  to='/masseges'
+                  component={Link}
                 />
 
                 <Tab
                   disableRipple
                   icon={<ImHappy className={classes.icons} />}
-                  label='Holidays'
-                />
-
-                <Tab
-                  disableRipple
-                  icon={<VscAccount className={classes.icons} />}
-                  label='Teachers Account'
-                />
-
-                <Tab
-                  disableRipple
-                  icon={<BsFillBrightnessHighFill className={classes.icons} />}
-                  label='Openings'
+                  label="About"
+                  to='/About'
+                  component={Link}
                 />
               </Tabs>
               <Button
-                aria-controls='menu'
+                aria-controls="menu"
                 onMouseOver={handleOpenMenu}
                 className={classes.acount}
                 disableElevation
                 disableRipple
-                variant='contained'
-                color='secondary'>
+                variant="contained"
+                color="secondary"
+              >
                 Profile
               </Button>
             </>
@@ -141,16 +140,22 @@ const Navbar = () => {
       </AppBar>
       {/* Menu */}
       <Menu
-        style={{ marginTop: '50px' }}
-        id='menu'
+        style={{ marginTop: "50px" }}
+        id="menu"
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
-        onClose={handleCloseMenu}>
-        <MenuItem onClick={handleCloseMenu}>My Account</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Examination Results</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Promotions</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Pending Fees</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Final Project</MenuItem>
+        onClose={handleCloseMenu}
+      >
+        <MenuItem component={Link} to="/my-acount">My Account</MenuItem>
+        <MenuItem component={Link} to="/login">
+          login
+        </MenuItem>
+        <MenuItem component={Link} to="/register">
+          Register
+        </MenuItem>
+        <MenuItem component={Link} to="/masseges">
+          Masseges
+        </MenuItem>
       </Menu>
     </>
   );

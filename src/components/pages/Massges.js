@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Hidden, makeStyles, Button } from '@material-ui/core';
+import { Hidden, makeStyles, Button } from '@material-ui/core';
 import MainContent from '../MainContent/MainContent';
 import IconsGrid from '../IconsGrid/IconsGrid';
 
@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const HomeBanner = () => {
+const Massges = () => {
   const classes = useStyles();
   return (
     <>
@@ -39,7 +39,7 @@ const HomeBanner = () => {
           <p className={classes.text}>Your Graduate School of management</p>
 
           <Button variant='contained' color='secondary'>
-            Hier our mind chase Work shop
+            Doven you can putt your compenent hier my friend
           </Button>
         </Hidden>
       </div>
@@ -49,4 +49,4 @@ const HomeBanner = () => {
   );
 };
 
-export default HomeBanner;
+export default Massges;

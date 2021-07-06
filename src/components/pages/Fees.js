@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const HomeBanner = () => {
+const Fees = () => {
   const classes = useStyles();
   return (
     <>
@@ -39,7 +39,7 @@ const HomeBanner = () => {
           <p className={classes.text}>Your Graduate School of management</p>
 
           <Button variant='contained' color='secondary'>
-            Hier our mind chase Work shop
+            neek ummak
           </Button>
         </Hidden>
       </div>
@@ -49,4 +49,5 @@ const HomeBanner = () => {
   );
 };
 
-export default HomeBanner;
+export default Fees;
+

@@ -1,23 +1,21 @@
 import React from 'react';
+import logo from '../../img/logo.png'
 import {
-  Avatar,
   Grid,
   ListItem,
   List,
   ListItemAvatar,
-  useTheme,
   makeStyles,
   Hidden,
 } from '@material-ui/core';
 
 import {
-  FcAutomotive,
   FcPhone,
   FcOnlineSupport,
   FcVoicemail,
 } from 'react-icons/fc';
 import './Footer.css';
-import { GiBookAura } from 'react-icons/gi';
+
 
 const useStyles = makeStyles(theme => ({
   footer_icons: {
@@ -45,7 +43,7 @@ const FooterComponent = () => {
           <Grid item sm={12} xs={12} md={4}>
             <div className='childe1__container'>
               <div>
-                <GiBookAura className={classes.logo} />
+              <img src={logo} alt="Logo" styles="width:2em; hight:3em;" />;
               </div>
             </div>
           </Grid>
@@ -67,7 +65,7 @@ const FooterComponent = () => {
                     </ListItemAvatar>
                     <ListItem className={classes.text}>+49410215455</ListItem>
                   </ListItem>
-
+                   
                   <ListItem>
                     <ListItemAvatar>
                       <FcVoicemail className={classes.footer_icons} />
@@ -77,20 +75,17 @@ const FooterComponent = () => {
                     </ListItem>
                   </ListItem>
                 </List>
-              </div>
-            </div>
+                </div>
+                </div>
           </Grid>
 
           <Grid sm={12} xs={12} md={4}>
             <div className='child3__container'>
               <div className='child3__title'>
-                <h1>About Us</h1>
+                <h1>About Us MindChase</h1>
                 <p className={classes.text}>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Maxime quod fuga maiores. Ducimus accusantium, vero
-                  praesentium deleniti excepturi, quod, inventore earum
-                  asperiores odio laborum numquam repellat at error corrupti
-                  debitis.
+                  We are Fun guys , we do fun things and stuff 
+                  Learn with us all the new stuff and things 
                 </p>
               </div>
             </div>
