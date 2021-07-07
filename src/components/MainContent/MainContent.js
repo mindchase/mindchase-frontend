@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Button, makeStyles, Typography } from '@material-ui/core';
-import studentsPic from '../../img/bannerimg.png';
-import school from '../../img/scho.svg';
+import studentsPic from '../../images/bannerimg.png';
+import school from '../../images/scho.svg';
 import './MainContent.css';
 
 const useStyles = makeStyles(theme => ({

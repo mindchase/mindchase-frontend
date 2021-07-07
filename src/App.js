@@ -2,7 +2,6 @@ import React from "react";
 import Register from "./components/users/Registration";
 import ForgotPassword from "./components/users/ForgotPassword";
 import NewPassword from "./components/users/NewPassword";
-
 import {
   Route,
   BrowserRouter as Router,
@@ -16,9 +15,8 @@ import HomeBanner from "./components/HomeBanner/HomeBanner";
 import Navbar from "./components/Navbar/Navbar";
 import theme from "./utils/theme";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
-import axios from "axios";
-
-axios.defaults.baseUrl = "http://localhost:3002";
+// import axios from 'axios'
+// axios.defaults.baseUrl = 'http://localhost:3002'
 
 const App = () => {
   return (
@@ -41,10 +39,12 @@ const App = () => {
               render={(props) => <Register {...props} />}
             />
             <Route
+              exact
               path="/forgotpassword"
               render={(props) => <ForgotPassword {...props} />}
             />
             <Route
+              exact
               path="/newpassword"
               render={(props) => <NewPassword {...props} />}
             />

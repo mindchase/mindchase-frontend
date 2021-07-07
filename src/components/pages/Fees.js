@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Hidden, makeStyles, Button } from '@material-ui/core';
+import { Hidden, makeStyles, Button } from '@material-ui/core';
 import MainContent from '../MainContent/MainContent';
 import IconsGrid from '../IconsGrid/IconsGrid';
 
