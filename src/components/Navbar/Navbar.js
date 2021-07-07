@@ -96,7 +96,7 @@ const Navbar = () => {
                   disableRipple
                   icon={<FiBookOpen className={classes.icons} />}
                   label="Workshop"
-                  to='/Workshop'
+                  to='/workshop'
                   component={Link}
                 />
                 <Tab
@@ -110,8 +110,8 @@ const Navbar = () => {
                 <Tab
                   disableRipple
                   icon={<MessageIcon className={classes.icons} />}
-                  label="Massges"
-                  to='/masseges'
+                  label="Messages"
+                  to='/messages'
                   component={Link}
                 />
 
@@ -119,7 +119,7 @@ const Navbar = () => {
                   disableRipple
                   icon={<ImHappy className={classes.icons} />}
                   label="About"
-                  to='/About'
+                  to='/about'
                   component={Link}
                 />
               </Tabs>
@@ -153,8 +153,8 @@ const Navbar = () => {
         <MenuItem component={Link} to="/register">
           Register
         </MenuItem>
-        <MenuItem component={Link} to="/masseges">
-          Masseges
+        <MenuItem component={Link} to="/messages">
+          Messages
         </MenuItem>
       </Menu>
     </>
