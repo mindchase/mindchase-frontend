@@ -9,7 +9,7 @@ import "./WorkshopBodyHeader.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: "100%",
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -18,26 +18,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const WorkshopsBody = (props) => {
-  
   const classes = useStyles();
-  
+
   return (
     <>
-      {/* header intro & place for video/ prezzie ? 
-      */}
+      {/* header intro & place for video/ prezzie ?
+       */}
       <div className="workshopBodyHeader">
         <h2>Title of workshop - header comp</h2>
         <div>
           <h3>Some space to show vid/ ppt/ pdf</h3>
-
-
-
         </div>
       </div>
-
+       
       {/* course content - accordion */}
       <div className={classes.root}>
-      <h2>Workshop content</h2>
+        <h2>Workshop content</h2>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -82,7 +78,6 @@ const WorkshopsBody = (props) => {
           </AccordionSummary>
         </Accordion>
       </div>
-
     </>
   );
 };

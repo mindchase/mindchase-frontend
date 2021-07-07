@@ -80,7 +80,7 @@ const WorkshopItem = (props) => {
               Fetch last updated: 01/2021?
             </Typography>
             <Typography variant="h5" component="h2">
-              {/* <Link to={`${url}/${props.id}`}>{props.title}</Link> */}
+              <Link to={`${url}/${props.id}`}>{props.title}</Link>
             </Typography>
             <Typography variant="body2" component="p">
               {props.description}
