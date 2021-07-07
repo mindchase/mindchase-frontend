@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from '../../images/logo.png'
+import Link from '@material-ui/core/Link'
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {
   Grid,
   ListItem,
@@ -20,6 +22,7 @@ import './Footer.css';
 const useStyles = makeStyles(theme => ({
   footer_icons: {
     fontSize: '2rem',
+    color: 'blue'
   },
   text: {
     fontSize: '1.1rem',
@@ -54,9 +57,9 @@ const FooterComponent = () => {
                 <List dense>
                   <ListItem>
                     <ListItemAvatar>
-                      <FcOnlineSupport className={classes.footer_icons} />
+                      <LinkedInIcon className={classes.footer_icons} />
                     </ListItemAvatar>
-                    <ListItem className={classes.text}>24/7 Support</ListItem>
+                    <ListItem className={classes.text}>LinkedIn</ListItem>
                   </ListItem> 
 
                   <ListItem>
