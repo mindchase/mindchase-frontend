@@ -2,11 +2,7 @@ import React from "react";
 import Register from "./components/users/Registration";
 import ForgotPassword from "./components/users/ForgotPassword";
 import NewPassword from "./components/users/NewPassword";
-import {
-  Route,
-  BrowserRouter as Router,
-  Switch,
-} from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Login from "./components/users/Login";
 import Fees from "./components/pages/Fees";
 import Messages from './components/pages/Messages'
@@ -15,8 +11,6 @@ import HomeBanner from "./components/HomeBanner/HomeBanner";
 import Navbar from "./components/Navbar/Navbar";
 import theme from "./utils/theme";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
-// import axios from 'axios'
-// axios.defaults.baseUrl = 'http://localhost:3002'
 
 const App = () => {
   return (

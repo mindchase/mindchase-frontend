@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../img/logo.png';
+import logo from '../../images/logo.png'
 import Link from '@material-ui/core/Link'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {
