@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const WorkshopsBody = (props) => {
-  console.log();
   
   const classes = useStyles();
   

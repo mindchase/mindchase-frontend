@@ -1,6 +1,6 @@
 import React from "react";
 import WorkshopItem from "./WorkshopItem";
-import WorkshopData from "./WorkshopData";
+import WorkshopData from "./WorkshopBodyData";
 import { Box, Grid } from "@material-ui/core";
 
 const Workshops = () => {
