@@ -5,6 +5,7 @@ import IconsGrid from '../IconsGrid/IconsGrid';
 import background from '../../images/digitalcampus_with_logo.jpg'
 
 const useStyles = makeStyles(theme => ({
+
   conatainer: {
     height: '100vh',
     background: ` url( ${background} )`,
@@ -35,8 +36,7 @@ const HomeBanner = () => {
       <div className={classes.conatainer} maxWidth={false}>
         <Hidden mdDown>
           <h1 className={classes.title}>Digital Campus</h1>
-    
-      {/*      <p className={classes.text}>Digital Campus</p>*/}
+          <p className={classes.text}>Digital Campus</p>
           <Button variant='contained' color='secondary'>
             join us
           </Button>
