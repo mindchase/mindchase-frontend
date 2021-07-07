@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Massges = () => {
+const Messages = () => {
   const classes = useStyles();
   return (
     <>
@@ -49,4 +49,4 @@ const Massges = () => {
   );
 };
 
-export default Massges;
+export default Messages;
