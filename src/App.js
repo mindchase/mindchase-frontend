@@ -4,12 +4,13 @@ import ForgotPassword from "./components/users/ForgotPassword";
 import NewPassword from "./components/users/NewPassword";
 import {
   Route,
-  NavLink,
   BrowserRouter as Router,
   Switch,
 } from "react-router-dom";
 import Login from "./components/users/Login";
-import { Button, ThemeProvider, CssBaseline } from "@material-ui/core";
+import Fees from "./components/pages/Fees";
+import Massges from './components/pages/Massges'
+import {ThemeProvider, CssBaseline } from "@material-ui/core";
 import HomeBanner from "./components/HomeBanner/HomeBanner";
 import Navbar from "./components/Navbar/Navbar";
 import theme from "./utils/theme";
@@ -24,22 +25,16 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Navbar />
-          <Button component={NavLink} to="/login">
-            Login
-          </Button>
-
-          <Button component={NavLink} to="/register">
-            Register
-          </Button>
-
           <Switch>
             <Route
               exact
-              path="/login"
-              render={(props) => <Login {...props} />}
+              path="/Workshop"
+              render={(props) => <HomeBanner {...props} />}
             />
+            <Route  path="/fees" render={(props) => <Fees {...props} />} />
+            <Route  path="/masseges" render={(props) => <Massges {...props} />} />
+            <Route path="/login" render={(props) => <Login {...props} />} />
             <Route
-              exact
               path="/register"
               render={(props) => <Register {...props} />}
             />
@@ -54,8 +49,6 @@ const App = () => {
               render={(props) => <NewPassword {...props} />}
             />
           </Switch>
-          <HomeBanner />
-
           <FooterComponent />
         </ThemeProvider>
       </Router>
