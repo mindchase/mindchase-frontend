@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   List,
   ListItem,
@@ -7,19 +7,19 @@ import {
   ListItemText,
   makeStyles,
   Drawer,
-} from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+} from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
 
 const DrawerComponent = () => {
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     drawerContainer: {},
     iconButtonContainer: {
-      marginLeft: 'auto',
-      color: 'white',
+      marginLeft: "auto",
+      color: "white",
     },
 
     menuIconToggle: {
-      fontSize: '3rem',
+      fontSize: "3rem",
     },
   }));
 
@@ -30,11 +30,12 @@ const DrawerComponent = () => {
   return (
     <>
       <Drawer
-        anchor='right'
+        anchor="right"
         classes={{ paper: classes.drawerContainer }}
         onClose={() => setOpenDrawer(false)}
         open={openDrawer}
-        onOpen={() => setOpenDrawer(true)}>
+        onOpen={() => setOpenDrawer(true)}
+      >
         <List>
           <ListItem divider button onClick={() => setOpenDrawer(false)}>
             <ListItemIcon>
@@ -71,7 +72,8 @@ const DrawerComponent = () => {
       <IconButton
         className={classes.iconButtonContainer}
         onClick={() => setOpenDrawer(!openDrawer)}
-        disableRipple>
+        disableRipple
+      >
         <MenuIcon className={classes.menuIconToggle} />
       </IconButton>
     </>
