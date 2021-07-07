@@ -2,13 +2,12 @@ import React from 'react';
 import { Container, Hidden, makeStyles, Button } from '@material-ui/core';
 import MainContent from '../MainContent/MainContent';
 import IconsGrid from '../IconsGrid/IconsGrid';
+import background from '../../images/digitalcampus_with_logo.jpg'
 
 const useStyles = makeStyles(theme => ({
   conatainer: {
     height: '100vh',
-    background: `linear-gradient(rgba(38, 70, 83, .8), rgba(33, 70, 131, .5)), url(
-      'https://cdn.pixabay.com/photo/2015/09/04/23/04/library-922998_960_720.jpg'
-    )`,
+    background: ` url( ${background} )`,
     backgroundPosition: 'contained',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
@@ -21,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     fontSize: '4rem',
-    color: '#fff1e6',
+    color: 'red',
   },
   text: {
     fontSize: '1.4rem',
@@ -35,11 +34,11 @@ const HomeBanner = () => {
     <>
       <div className={classes.conatainer} maxWidth={false}>
         <Hidden mdDown>
-          <h1 className={classes.title}>Your Classroom</h1>
-          <p className={classes.text}>Your Graduate School of management</p>
-
+          <h1 className={classes.title}>Digital Campus</h1>
+    
+      {/*      <p className={classes.text}>Digital Campus</p>*/}
           <Button variant='contained' color='secondary'>
-            Hier our mind chase Work shop
+            join us
           </Button>
         </Hidden>
       </div>
