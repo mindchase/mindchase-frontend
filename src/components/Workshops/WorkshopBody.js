@@ -25,12 +25,17 @@ const WorkshopsBody = (props) => {
       {/* header intro & place for video/ prezzie ?
        */}
       <div className="workshopBodyHeader">
-        <h2>Title of workshop - header comp</h2>
+        <h2>{props.title} automate this step weasel</h2>
         <div>
-          <h3>Some space to show vid/ ppt/ pdf</h3>
+          <h3>convert to pdf - can also do iframe in that case</h3>
+          <h3>convert presentations to slideshows</h3>
+        </div>
+        <div>
+          in iframe, can process as big string, then search and replace width/
+          height for our prefered size
         </div>
       </div>
-       
+
       {/* course content - accordion */}
       <div className={classes.root}>
         <h2>Workshop content</h2>

@@ -31,12 +31,11 @@ const WorkshopItem = (props) => {
   const [isShown, setIsShown] = useState(false);
 
   // (trying to) build relative route paths
-  const { id } = useParams();
 
   const { path, url } = useRouteMatch();
   console.log("url:", url);
   console.log("path:", path);
-
+  
   return (
     <>
       <Link to={`${url}/${props.id}`}>
