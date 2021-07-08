@@ -31,12 +31,11 @@ const WorkshopItem = (props) => {
   const [isShown, setIsShown] = useState(false);
 
   // (trying to) build relative route paths
-  const { id } = useParams();
 
   const { path, url } = useRouteMatch();
   console.log("url:", url);
   console.log("path:", path);
-
+  
   return (
     <>
       <Link to={`${url}/${props.route}`}>
@@ -80,7 +79,7 @@ const WorkshopItem = (props) => {
               Fetch last updated: 01/2021?
             </Typography>
             <Typography variant="h5" component="h2">
-              {/* <Link to={`${url}/${props.id}`}>{props.title}</Link> */}
+              <Link to={`${url}/${props.id}`}>{props.title}</Link>
             </Typography>
             <Typography variant="body2" component="p">
               {props.description}

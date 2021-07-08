@@ -14,37 +14,42 @@ const cardsArr = [
     image: Strong,
     alt: "Woman smirks with drawn arms flex",
     title: "Empowerment",
-    // description: "card without description probably works best",
+    id: `empowerment`,
   },
   {
     image: Time,
     alt: "Picture of clocks",
     title: "Time Management",
     description: `add ratings here`,
+    id: `time-management`,
   },
   {
     image: Strong,
     alt: "Woman smile with strong arms drawn behind here",
     title: "Self-Confidence",
     description: `add ratings here`,
+    id: `self-confidence`,
   },
   {
     image: Stress,
     alt: "Image of notebook, flowers and crayons on table",
     title: "Stress Management",
     description: `add ratings here`,
+    id: `stress-management`,
   },
   {
     image: Motiv,
     alt: "Note book with now ticked and later left unchecked",
     title: "Motivation",
     description: `add ratings here`,
+    id: `motivation`,
   },
   {
     image: Prez,
     alt: "Picture of woman drawing on board",
     title: "Presentation Skills",
     description: `add ratings here`,
+    id: `presentation-skills`,
   },
 ];
 

@@ -2,21 +2,16 @@ import React from "react";
 import Register from "./components/users/Registration";
 import ForgotPassword from "./components/users/ForgotPassword";
 import NewPassword from "./components/users/NewPassword";
-import {
-  Route,
-  BrowserRouter as Router,
-  Switch,
-} from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Login from "./components/users/Login";
 import Fees from "./components/pages/Fees";
-import Massges from './components/pages/Massges'
+import Messages from './components/pages/Messages'
 import {ThemeProvider, CssBaseline } from "@material-ui/core";
 import HomeBanner from "./components/HomeBanner/HomeBanner";
 import Navbar from "./components/Navbar/Navbar";
 import theme from "./utils/theme";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
-// import axios from 'axios'
-// axios.defaults.baseUrl = 'http://localhost:3002'
+import Workshop from "./components/Workshops/WorkshopBody"
 
 const App = () => {
   return (
@@ -28,11 +23,12 @@ const App = () => {
           <Switch>
             <Route
               exact
-              path="/Workshop"
+              path="/workshops"
               render={(props) => <HomeBanner {...props} />}
             />
+            <Route path="/workshops/:workshopId" component={Workshop} />
             <Route  path="/fees" render={(props) => <Fees {...props} />} />
-            <Route  path="/masseges" render={(props) => <Massges {...props} />} />
+            <Route  path="/messages" render={(props) => <Messages {...props} />} />
             <Route path="/login" render={(props) => <Login {...props} />} />
             <Route
               path="/register"
