@@ -17,15 +17,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const WorkshopsBody = (props) => {
+const WorkshopsBody = ({match}) => {
   const classes = useStyles();
+
+  const {
+    params: { workshopId }
+  } = match
 
   return (
     <>
       {/* header intro & place for video/ prezzie ?
        */}
       <div className="workshopBodyHeader">
-        <h2>{props.title} automate this step weasel</h2>
+        <h2>{workshopId}</h2>
         <div>
           <h3>convert to pdf - can also do iframe in that case</h3>
           <h3>convert presentations to slideshows</h3>

@@ -96,7 +96,7 @@ const Navbar = () => {
                   disableRipple
                   icon={<FiBookOpen className={classes.icons} />}
                   label="Workshop"
-                  to='/workshop'
+                  to='/workshops'
                   component={Link}
                 />
                 <Tab

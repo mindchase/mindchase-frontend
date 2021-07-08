@@ -38,7 +38,7 @@ const WorkshopItem = (props) => {
   
   return (
     <>
-      <Link to={`${url}/${props.id}`}>
+      <Link to={`${url}/${props.route}`}>
         <Card
           className={classes.root}
           // tooltip funcs

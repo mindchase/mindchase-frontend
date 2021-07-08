@@ -11,6 +11,7 @@ import HomeBanner from "./components/HomeBanner/HomeBanner";
 import Navbar from "./components/Navbar/Navbar";
 import theme from "./utils/theme";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
+import Workshop from "./components/Workshops/WorkshopBody"
 
 const App = () => {
   return (
@@ -22,9 +23,10 @@ const App = () => {
           <Switch>
             <Route
               exact
-              path="/Workshop"
+              path="/workshops"
               render={(props) => <HomeBanner {...props} />}
             />
+            <Route path="/workshops/:workshopId" component={Workshop} />
             <Route  path="/fees" render={(props) => <Fees {...props} />} />
             <Route  path="/messages" render={(props) => <Messages {...props} />} />
             <Route path="/login" render={(props) => <Login {...props} />} />
