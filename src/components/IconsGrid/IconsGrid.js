@@ -50,11 +50,13 @@ import Workshops from "../Workshops/Workshops";
 //   },
 // }));
 
-const IconsGrid = () => {
+const IconsGrid = ({courses,setCourses}) => {
   // const classes = useStyles();
   return (
     <>
-      <Workshops />
+      <Workshops 
+      courses={courses}
+      />
 
       {/* <Grid
         className={classes.iconsGridContainer}

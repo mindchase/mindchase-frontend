@@ -12,12 +12,24 @@ import Navbar from "./components/Navbar/Navbar";
 import theme from "./utils/theme";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Workshop from "./components/Workshops/WorkshopBody"
-import ReactDOM from "react-dom";
 import axios from 'axios'
 
 
 
-const App = () => {
+const App = (match) => {
+  const [courses, setCourses] = useState([])
+
+  useEffect(() => {
+    const getCourses = async () => {
+      const response = await axios.get("http://localhost:3001/courses")
+      console.log(response.data)
+      setCourses(response.data)
+    }
+    getCourses()
+  }, [])
+
+
+
 
   return (
     <>
@@ -29,7 +41,10 @@ const App = () => {
             <Route
               exact
               path="/workshops"
-              render={(props) => <HomeBanner {...props} />}
+              render={(props) => 
+              <HomeBanner 
+              courses = {courses}
+              {...props} />}
             />
             <Route path="/workshops/:workshopId" component={Workshop} 
             

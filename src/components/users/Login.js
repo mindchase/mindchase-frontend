@@ -8,9 +8,7 @@ import axios from 'axios'
 
 
 const Login = () => {
-
     const { register, formState: { errors }, handleSubmit } = useForm()
-
     const submit = async (data) => {
         // send data to backend
         console.log("submit", data)
@@ -19,10 +17,8 @@ const Login = () => {
             axios.defaults.headers.common['Authorization'] = response.headers['x-auth']
         } catch (error) {
             console.log(error)
-        }
-        
+        }  
     }
-
 
     const paperStyle = { padding: 25, height: '78vh', width: 310, margin: "20px auto" }
     const avatarStyle = { backgroundColor: '#1bbd7e' }
@@ -31,36 +27,55 @@ const Login = () => {
     return (
         <Grid >
             <form onSubmit={handleSubmit(submit)}>
-                <Paper elevation={10} style={paperStyle}     >
+
+                <Paper 
+                elevation={10} 
+                style={paperStyle}  >
 
                     <Grid align='center'>
-                        <Avatar style={avatarStyle}><LockOutlinedIcon /></Avatar>
+                        <Avatar style={avatarStyle}>
+                            <LockOutlinedIcon />
+                        </Avatar>
                         <h2>Welcome to digital campus</h2>
                     </Grid>
 
 
-                    <TextField label='your Email please' placeholder='Enter Email'
+                    <TextField 
+                        label='your Email please' 
+                        placeholder='Enter Email'
                         {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
                         fullWidth required />
 
-                    <TextField label='Password' placeholder='Enter password' type='password' fullWidth required
+                    <TextField 
+                        label='Password' 
+                        placeholder='Enter password' 
+                        type='password' 
+                        fullWidth required
                         {...register("password", { required: true })} />
+
                     {errors.password && <div>Password is required</div>}
 
-
-                    <FormControlLabel control={
-                        <Checkbox
-                            name="checkedB"
-                            color="primary"
-                        />
-                    }
+                    <FormControlLabel 
+                        control={
+                            <Checkbox
+                                name="checkedB"
+                                color="primary"
+                            />
+                        }
                         label="Remember me" />
 
-                    <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Login</Button>
+                    <Button 
+                        type='submit' 
+                        color='primary' 
+                        variant="contained" 
+                        style={btnstyle} 
+                        fullWidth>Login</Button>
 
                     <Typography > Do you have an account ?
-                        <Link href="Register" type="submit" > Sign Up  </Link>
+                        <Link href="Register" 
+                        type="submit" > Sign Up  </Link>
                     </Typography>
+
                 </Paper>
             </form>
         </Grid>

@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const HomeBanner = () => {
+const HomeBanner = ({courses,setCourses}) => {
   const classes = useStyles();
   return (
     <>
@@ -42,7 +42,9 @@ const HomeBanner = () => {
           </Button>
         </Hidden>
       </div>
-      <IconsGrid />
+      <IconsGrid 
+        courses={courses}
+      />
       <MainContent />
     </>
   );

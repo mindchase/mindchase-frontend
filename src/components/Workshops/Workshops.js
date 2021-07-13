@@ -1,28 +1,19 @@
-import React, { useEffect, useState } from "react";
+//import React, { useEffect, useState } from "react";
 import WorkshopItem from "./WorkshopItem";
-import WorkshopData from "./WorkshopBodyData";
+//import WorkshopData from "./WorkshopBodyData";
 import { Box, Grid } from "@material-ui/core";
-import axios from 'axios'
 
-const Workshops = () => {
+const Workshops = ({courses,setCourses}) => {
 
-  const [courses, setCourses] = useState([])
-
-  useEffect(() => {
-    const getCourses = async () => {
-      const response = await axios.get("http://localhost:3002/courses")
-      console.log(response.data)
-      setCourses(response.data)
-    }
-    getCourses()
-  }, [])
-
+  //const [courses, setCourses] = useState([])
+  // State move to APP component
 
   return (
     <>
       <Box p={5}>
-        <Grid container spacing={4}>
-          {/* loop them props */}
+        <Grid container spacing={4}
+
+        >
           {courses.map((card, id) => {
             return (
               <Grid item xs={12} sm={6} md={4} key={id}>

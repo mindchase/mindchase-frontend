@@ -9,8 +9,6 @@ import axios from 'axios'
 const Registration=()=>{
     const { register, handleSubmit, formState: { errors } , watch, control } = useForm()
    
-
-
     const submit = (data) => {
         console.log("submit")
         axios

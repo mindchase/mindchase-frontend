@@ -57,7 +57,8 @@ const FooterComponent = () => {
                 <List dense>
                   <ListItem>
                     <ListItemAvatar>
-                      <LinkedInIcon className={classes.footer_icons} />
+                      <LinkedInIcon className={classes.footer_icons}  />
+                      
                     </ListItemAvatar>
                     <ListItem className={classes.text}>LinkedIn</ListItem>
                   </ListItem> 
