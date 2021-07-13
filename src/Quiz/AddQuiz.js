@@ -74,5 +74,3 @@ function AddQuiz() {
 
 export default AddQuiz
 
-
-// https://www.youtube.com/watch?v=nUbNn0voiBI    in the 18:15
