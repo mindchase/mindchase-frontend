@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar/Navbar";
 import theme from "./utils/theme";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Workshop from "./components/Workshops/WorkshopBody"
+import AddQuiz from "./Quiz/AddQuiz"
 
 const App = () => {
   return (
@@ -44,6 +45,12 @@ const App = () => {
               path="/newpassword"
               render={(props) => <NewPassword {...props} />}
             />
+            <Route
+              exact
+              path="/addquiz"
+              render={(props) => <AddQuiz {...props} />}
+            />
+            
           </Switch>
           <FooterComponent />
         </ThemeProvider>
@@ -53,3 +60,4 @@ const App = () => {
 };
 
 export default App;
+

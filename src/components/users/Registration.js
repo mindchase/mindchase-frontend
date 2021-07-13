@@ -1,9 +1,9 @@
 import React from 'react'
 import {useForm, Controller} from 'react-hook-form'
-import {Grid , Paper,TextField,Typography ,Button,Avatar,Link, Input} from '@material-ui/core'
+import {Grid , Paper,Typography ,Button,Avatar,Link, Input} from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+// import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios'
 
 const Registration=()=>{
