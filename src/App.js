@@ -1,4 +1,3 @@
-import React,{useState ,useEffect }from "react";
 import Register from "./components/users/Registration";
 import ForgotPassword from "./components/users/ForgotPassword";
 import NewPassword from "./components/users/NewPassword";
@@ -12,13 +11,11 @@ import Navbar from "./components/Navbar/Navbar";
 import theme from "./utils/theme";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Workshop from "./components/Workshops/WorkshopBody"
-import ReactDOM from "react-dom";
-import axios from 'axios'
 
 
 
-const App = () => {
-
+const App = (match) => {
+  
   return (
     <>
       <Router>
@@ -28,13 +25,20 @@ const App = () => {
           <Switch>
             <Route
               exact
+              component={HomeBanner} 
               path="/workshops"
-              render={(props) => <HomeBanner {...props} />}
+           
             />
-            <Route path="/workshops/:workshopId" component={Workshop} 
+
+            <Route 
+            path="/workshops/:workshopId" 
+            component={Workshop} 
             
             />
-            <Route  path="/fees" render={(props) => <Fees {...props} />} />
+            <Route  
+            path="/fees" 
+            render={(props) => <Fees {...props} />} />
+            
             <Route  path="/messages" render={(props) => <Messages {...props} />} />
             <Route path="/login" render={(props) => <Login {...props} />} />
             <Route

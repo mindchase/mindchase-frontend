@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{useState ,useEffect }from "react";
 import { Container, Hidden, makeStyles, Button } from '@material-ui/core';
 import MainContent from '../MainContent/MainContent';
 import IconsGrid from '../IconsGrid/IconsGrid';
 import background from '../../images/digitalcampus_with_logo.jpg'
+import axios from 'axios'
 
 const useStyles = makeStyles(theme => ({
 
@@ -30,6 +31,19 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const HomeBanner = () => {
+
+  const [courses, setCourses] = useState([])
+
+  useEffect(() => {
+    const getCourses = async () => {
+      const response = await axios.get("/courses")
+      console.log(response.data)
+      setCourses(response.data)
+    }
+    getCourses()
+  }, [])
+
+
   const classes = useStyles();
   return (
     <>
@@ -42,7 +56,9 @@ const HomeBanner = () => {
           </Button>
         </Hidden>
       </div>
-      <IconsGrid />
+      <IconsGrid 
+        courses={courses}
+      />
       <MainContent />
     </>
   );
