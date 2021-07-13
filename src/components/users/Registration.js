@@ -45,10 +45,46 @@ const Registration=()=>{
                     render={({ field }) => <Input {...field} fullWidth />}
                     placeholder='Enter username'
                 />
+                 <Controller
+                    name="email"
+                    control={control}
+                    defaultValue=""
+                    rules={{...register("email", {required: true, pattern: /^\S+@\S+$/i})}}
+                    render={({ field }) => <Input {...field} fullWidth />}
+                    placeholder='Enter email'
+                />
+
+              
+                <TextField 
+                label='Password' 
+                placeholder='Enter password' 
+                type='password' 
+                fullWidth required
+                {...register("password", {required: true, minLength: 8})} 
+                />
+                {errors.password && <div>Password is required</div>}
+
+
+                <TextField label='Password repeat' 
+                placeholder='rPassword repeat' 
+                type='password' 
+                fullWidth required
+               {...register("password_repeat", {validate: (value) => {
+                return value === watch('password'); // value is from password_repeat and watch will return value from password
+                }})} 
+                />
+                  {errors.password_repeat && <div>Password is not the same</div>}
+                <FormControlLabel control={
+                        <Checkbox
+                            name="checkedB"
+                            color="primary"
+                        />
+                }
+                label="Remember me" /> 
 
 
 
-
+            
                 {/* <TextField label='Username'  fullWidth required
                     />
    <TextField label='your Email please' placeholder='Enter Email' 
@@ -56,14 +92,24 @@ const Registration=()=>{
                 fullWidth required/>
              
 
-                <TextField label='Password' placeholder='Enter password' type='password' fullWidth required
-                {...register("password", {required: true, minLength: 8})} />
+                <TextField 
+                label='Password' 
+                placeholder='Enter password' 
+                type='password' 
+                fullWidth required
+                {...register("password", {required: true, minLength: 8})} 
+                />
                 {errors.password && <div>Password is required</div>}
 
-                <TextField label='Password repeat' placeholder='rPassword repeat' type='password' fullWidth required
+
+                <TextField label='Password repeat' 
+                placeholder='rPassword repeat' 
+                type='password' 
+                fullWidth required
                {...register("password_repeat", {validate: (value) => {
                 return value === watch('password'); // value is from password_repeat and watch will return value from password
-                }})} />
+                }})} 
+                />
                   {errors.password_repeat && <div>Password is not the same</div>}
                 <FormControlLabel control={
                         <Checkbox

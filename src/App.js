@@ -1,4 +1,3 @@
-import React from "react";
 import Register from "./components/users/Registration";
 import ForgotPassword from "./components/users/ForgotPassword";
 import NewPassword from "./components/users/NewPassword";
@@ -14,7 +13,11 @@ import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Workshop from "./components/Workshops/WorkshopBody"
 import AddQuiz from "./Quiz/AddQuiz"
 
+
+
+
 const App = () => {
+
   return (
     <>
       <Router>
@@ -27,7 +30,9 @@ const App = () => {
               path="/workshops"
               render={(props) => <HomeBanner {...props} />}
             />
-            <Route path="/workshops/:workshopId" component={Workshop} />
+            <Route path="/workshops/:workshopId" component={Workshop} 
+            
+            />
             <Route  path="/fees" render={(props) => <Fees {...props} />} />
             <Route  path="/messages" render={(props) => <Messages {...props} />} />
             <Route path="/login" render={(props) => <Login {...props} />} />
