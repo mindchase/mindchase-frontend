@@ -12,16 +12,36 @@ import theme from "./utils/theme";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Workshop from "./components/Workshops/WorkshopBody"
 
+import useToken from './components/useToken';
+/**
+function setToken(userToken) {
+  sessionStorage.setItem('token', JSON.stringify(userToken));
+}
 
+function getToken() {
+  const tokenString = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken?.token
+}
+ */
 
-const App = (match) => {
-  
+const App = () => {
+
+  const { token, setToken } = useToken();
+  /** 
+   if(!token) {
+     console.log(setToken)
+     return (
+     <Login setToken={setToken} />
+     )   
+   }
+   */
   return (
     <>
       <Router>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Navbar />
+          <Navbar token={token} setToken={setToken} />
           <Switch>
             <Route
               exact
@@ -36,11 +56,14 @@ const App = (match) => {
             
             />
             <Route  
-            path="/fees" 
+            path="/fee" 
             render={(props) => <Fees {...props} />} />
             
             <Route  path="/messages" render={(props) => <Messages {...props} />} />
-            <Route path="/login" render={(props) => <Login {...props} />} />
+            <Route path="/login" render={(props) => <Login {...props} 
+            setToken={setToken}
+            />} 
+            />
             <Route
               path="/register"
               render={(props) => <Register {...props} />}

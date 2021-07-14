@@ -1,24 +1,32 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useForm } from 'react-hook-form'
 import { Grid, Paper, TextField, Typography, Button, Avatar, Link} from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios'
+import {useHistory} from  'react-router-dom'
 
-
-const Login = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm()
-    const submit = async (data) => {
-        // send data to backend
-        console.log("submit", data)
-        try {
-            const response = await axios.post('/users/login', data)
-            axios.defaults.headers.common['Authorization'] = response.headers['x-auth']
-        } catch (error) {
-            console.log(error)
-        }  
+    function loginUser(credentials) {
+    return axios.post('/users/login', credentials) 
     }
+
+
+const Login = ({ setToken }) => {
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    const history = useHistory()
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const response = await loginUser({
+          email,
+          password
+        });
+
+        setToken(response.data.token);
+        history.push("/workshops")
+      }
 
     const paperStyle = { padding: 25, height: '78vh', width: 310, margin: "20px auto" }
     const avatarStyle = { backgroundColor: '#1bbd7e' }
@@ -26,7 +34,7 @@ const Login = () => {
 
     return (
         <Grid >
-            <form onSubmit={handleSubmit(submit)}>
+            <form onSubmit={handleSubmit}>
 
                 <Paper 
                 elevation={10} 
@@ -43,18 +51,15 @@ const Login = () => {
                     <TextField 
                         label='your Email please' 
                         placeholder='Enter Email'
-                        {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-                        fullWidth required />
+                        fullWidth required 
+                        onChange={e => setEmail(e.target.value)}/>
 
                     <TextField 
                         label='Password' 
                         placeholder='Enter password' 
                         type='password' 
                         fullWidth required
-                        {...register("password", { required: true })} />
-
-                    {errors.password && <div>Password is required</div>}
-
+                        onChange={e => setPassword(e.target.value)} />
                     <FormControlLabel 
                         control={
                             <Checkbox
@@ -86,4 +91,3 @@ export default Login
 
 
 
-//
