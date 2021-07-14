@@ -13,17 +13,6 @@ import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Workshop from "./components/Workshops/WorkshopBody"
 
 import useToken from './components/useToken';
-/**
-function setToken(userToken) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
-
-function getToken() {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken?.token
-}
- */
 
 const App = () => {
 
