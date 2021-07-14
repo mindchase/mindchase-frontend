@@ -3,6 +3,7 @@ import { Grid, Button, makeStyles, Typography } from '@material-ui/core';
 import studentsPic from '../../images/bannerimg.png';
 import school from '../../images/scho.svg';
 import './MainContent.css';
+import Logo from '../../images/mindchase-symbol-big.png'
 
 const useStyles = makeStyles(theme => ({
   content: {

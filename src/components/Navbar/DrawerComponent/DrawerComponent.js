@@ -15,7 +15,7 @@ const DrawerComponent = () => {
     drawerContainer: {},
     iconButtonContainer: {
       marginLeft: "auto",
-      color: "white",
+      color: "red",
     },
 
     menuIconToggle: {
@@ -24,8 +24,6 @@ const DrawerComponent = () => {
   }));
 
   const [openDrawer, setOpenDrawer] = useState(false);
-
-  //Css
   const classes = useStyles();
   return (
     <>
