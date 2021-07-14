@@ -12,7 +12,7 @@ const Registration=()=>{
     const submit = (data) => {
         console.log("submit")
         axios
-        .post("http://localhost:3002/users/register", data)
+        .post("http://localhost:3001/users/register", data)
         .then((response) => {
                     console.log(response)
         })

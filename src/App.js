@@ -12,45 +12,56 @@ import theme from "./utils/theme";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Workshop from "./components/Workshops/WorkshopBody"
 import AddQuiz from "./quiz/AddQuiz"
+import useToken from './components/useToken';
 
 
-
-const App = (match) => {
+const App = () => {
+  const { token, setToken } = useToken();
 
   return (
     <>
       <Router>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Navbar />
+          <Navbar token={token} setToken={setToken} />
           <Switch>
             <Route
               exact
               component={HomeBanner}
               path="/workshops"
-
             />
 
             <Route
               path="/workshops/:workshopId"
               component={Workshop}
-
             />
-            <Route
-              path="/fees"
+                
+            <Route  
+            path="/fee" 
+            render={(props) => <Fees {...props} />} />
+            
+            <Route  path="/messages" 
+            render={(props) => <Messages {...props} />} />
+              
+            <Route path="/login" 
+              render={(props) => <Login {...props} setToken={setToken} 
+            />}  />
+
+            <Route path="/fees" 
               render={(props) => <Fees {...props} />} />
 
-            <Route path="/messages" render={(props) => <Messages {...props} />} />
-            <Route path="/login" render={(props) => <Login {...props} />} />
+            <Route path="/messages" 
+              render={(props) => <Messages {...props} />} />
+              
+            <Route 
+              path="/login" render={(props) => <Login {...props} />} />
+              
             <Route
               path="/register"
-              render={(props) => <Register {...props} />}
-            />
-            <Route
-              exact
-              path="/forgotpassword"
-              render={(props) => <ForgotPassword {...props} />}
-            />
+              render={(props) => <Register {...props} /> />
+            <Route exact path="/forgotpassword"
+              render={(props) => <ForgotPassword {...props} />}/>
+                
             <Route
               exact
               path="/newpassword"
