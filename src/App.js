@@ -5,37 +5,19 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Login from "./components/users/Login";
 import Fees from "./components/pages/Fees";
 import Messages from './components/pages/Messages'
-import {ThemeProvider, CssBaseline } from "@material-ui/core";
+import { ThemeProvider, CssBaseline } from "@material-ui/core";
 import HomeBanner from "./components/HomeBanner/HomeBanner";
 import Navbar from "./components/Navbar/Navbar";
 import theme from "./utils/theme";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Workshop from "./components/Workshops/WorkshopBody"
-
+import AddQuiz from "./quiz/AddQuiz"
 import useToken from './components/useToken';
-/**
-function setToken(userToken) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
 
-function getToken() {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken?.token
-}
- */
 
 const App = () => {
-
   const { token, setToken } = useToken();
-  /** 
-   if(!token) {
-     console.log(setToken)
-     return (
-     <Login setToken={setToken} />
-     )   
-   }
-   */
+
   return (
     <>
       <Router>
@@ -45,40 +27,48 @@ const App = () => {
           <Switch>
             <Route
               exact
-              component={HomeBanner} 
+              component={HomeBanner}
               path="/workshops"
-           
             />
 
-            <Route 
-            path="/workshops/:workshopId" 
-            component={Workshop} 
-            
+            <Route
+              path="/workshops/:workshopId"
+              component={Workshop}
             />
+                
             <Route  
             path="/fee" 
             render={(props) => <Fees {...props} />} />
             
-            <Route  path="/messages" render={(props) => <Messages {...props} />} />
-            <Route path="/login" render={(props) => <Login {...props} 
-            setToken={setToken}
-            />} 
-            />
+            <Route  path="/messages" 
+            render={(props) => <Messages {...props} />} />
+              
+            <Route path="/login" 
+              render={(props) => <Login {...props} setToken={setToken} 
+            />}  />
+
+            <Route path="/fees" 
+              render={(props) => <Fees {...props} />} />
+
+            <Route path="/messages" 
+              render={(props) => <Messages {...props} />} />
+              
+            <Route 
+              path="/login" render={(props) => <Login {...props} />} />
+              
             <Route
               path="/register"
-              render={(props) => <Register {...props} />}
-            />
-            <Route
-              exact
-              path="/forgotpassword"
-              render={(props) => <ForgotPassword {...props} />}
-            />
+              render={(props) => <Register {...props} /> />
+            <Route exact path="/forgotpassword"
+              render={(props) => <ForgotPassword {...props} />}/>
+                
             <Route
               exact
               path="/newpassword"
               render={(props) => <NewPassword {...props} />}
             />
           </Switch>
+          <AddQuiz />
           <FooterComponent />
         </ThemeProvider>
       </Router>
