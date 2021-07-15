@@ -4,6 +4,8 @@ import MainContent from '../MainContent/MainContent';
 import IconsGrid from '../IconsGrid/IconsGrid';
 import background from '../../images/digitalcampus_with_logo.jpg'
 import axios from 'axios'
+import Workshops from "../Workshops/Workshops";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
 
@@ -50,15 +52,19 @@ const HomeBanner = () => {
       <div className={classes.conatainer} maxWidth={false}>
         <Hidden mdDown>
           <h1 className={classes.title}>Digital Campus</h1>
-          <p className={classes.text}>Digital Campus</p>
-          <Button variant='contained' color='secondary'>
+          <Button variant='contained' color='secondary'
+             to='/register'
+             component={Link}                                          >
             join us
           </Button>
         </Hidden>
       </div>
-      <IconsGrid 
-        courses={courses}
-      />
+
+  
+          <Workshops 
+          courses={courses}
+          />
+
       <MainContent />
     </>
   );

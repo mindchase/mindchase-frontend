@@ -13,40 +13,22 @@ import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Workshop from "./components/Workshops/WorkshopBody"
 
 import useToken from './components/useToken';
-/**
-function setToken(userToken) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
-
-function getToken() {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken?.token
-}
- */
 
 const App = () => {
 
   const { token, setToken } = useToken();
-  /** 
-   if(!token) {
-     console.log(setToken)
-     return (
-     <Login setToken={setToken} />
-     )   
-   }
-   */
   return (
     <>
       <Router>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+
           <Navbar token={token} setToken={setToken} />
           <Switch>
-            <Route
+             <Route
               exact
               component={HomeBanner} 
-              path="/workshops"
+              path="/"
            
             />
 
