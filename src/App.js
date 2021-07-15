@@ -16,18 +16,19 @@ import useToken from './components/useToken';
 
 const App = () => {
   const { token, setToken } = useToken();
-
   return (
     <>
       <Router>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+
           <Navbar token={token} setToken={setToken} />
           <Switch>
-            <Route
+             <Route
               exact
-              component={HomeBanner}
-              path="/workshops"
+              component={HomeBanner} 
+              path="/"
+           
             />
 
             <Route

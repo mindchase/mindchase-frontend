@@ -111,8 +111,8 @@ const Navbar = ({token, setToken}) => {
                 <Tab
                   disableRipple
                   icon={<FiBookOpen className={classes.icons} />}
-                  label="Workshop"
-                  to='/workshops'
+                  label="Home"
+                  to='/'
                   component={Link}
                 />
                 <Tab

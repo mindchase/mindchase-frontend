@@ -78,7 +78,7 @@ const WorkshopsBody = ({title}) => {
             id="panel3a-header"
           >
             <Typography className={classes.heading}>
-              Disabled Accordion
+              lol
             </Typography>
           </AccordionSummary>
         </Accordion>

@@ -25,7 +25,7 @@ const Login = ({ setToken }) => {
         });
 
         setToken(response.data.token);
-        history.push("/workshops")
+        history.push("/")
       }
 
     const paperStyle = { padding: 25, height: '78vh', width: 310, margin: "20px auto" }
