@@ -20,6 +20,9 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 300,
   },
+  root2:{
+    position :"absolute"
+  },
   media: {
     height: 140,
   },
@@ -54,7 +57,7 @@ const WorkshopItem = (props) => {
               title={props.title}
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
+              <Typography gutterBottom variant="h5" component="h2" >
                 {props.title}
               </Typography>
             </CardContent>

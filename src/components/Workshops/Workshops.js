@@ -10,8 +10,8 @@ const Workshops = ({courses,setCourses}) => {
 
   return (
     <>
-      <Box p={5}>
-        <Grid container spacing={4}
+      <Box p={10}>
+        <Grid container spacing={8}
 
         >
           {courses.map((card, id) => {
