@@ -9,7 +9,7 @@ function AddQuiz() {
 
     const [input, setInput] = useState({
         question: "",
-        checkbox1: Boolean,
+        checkbox1: false,
         answer1: "",
         checkbox2: Boolean,
         answer2: "",
