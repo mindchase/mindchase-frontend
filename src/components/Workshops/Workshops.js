@@ -14,7 +14,7 @@ const Workshops = ({courses,setCourses}) => {
         <Grid container spacing={8}
 
         >
-          {courses.map((card, id) => {
+          {courses &&  courses.map((card, id) => {
             return (
               <Grid item xs={12} sm={6} md={4} key={id}>
                 <WorkshopItem {...card} />

@@ -1,21 +1,16 @@
 import React, { useState } from "react";
-// refactor for css
-import {
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Button,
-  Typography,
-  makeStyles,
-} from "@material-ui/core";
 import { Link, useParams, useRouteMatch } from "react-router-dom";
+import {
+    Card,
+    CardActionArea,
+    CardActions,
+    CardContent,
+    CardMedia,
+    Button,
+    Typography,
+    makeStyles,
+} from "@material-ui/core";
 
-// test out with carousel??????
-// import Carousel from "react-material-ui-carousel";
-
-// need to refactor this as css - or use this approach throughout project
 const useStyles = makeStyles({
   root: {
     maxWidth: 300,
@@ -30,10 +25,8 @@ const useStyles = makeStyles({
 
 const WorkshopItem = (props) => {
   const classes = useStyles();
-
   const [isShown, setIsShown] = useState(false);
 
-  // (trying to) build relative route paths
 
   const { path, url } = useRouteMatch();
   console.log("url:", url);

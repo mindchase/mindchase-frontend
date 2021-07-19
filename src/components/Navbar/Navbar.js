@@ -62,10 +62,9 @@ const Navbar = ({token, setToken}) => {
 
   const classes = useStyles();
 
-  const theme = useTheme(); //Get a copy of our default theme in our component so that we can access the breakpoints and pass the useMediaQuery
-
+  const theme = useTheme(); 
+  //Get a copy of our default theme in our component so that we can access the breakpoints and pass the useMediaQuery
   const isMatch = useMediaQuery(theme.breakpoints.down("sm"));
-
   //Functions
   const handleClickTab = (e, newValue) => {
     //The second value contains the current index
@@ -88,19 +87,19 @@ const Navbar = ({token, setToken}) => {
       <AppBar elevation={0} color="primary">
         <Toolbar>
           <Tabs>
-
-            <img
-             src={Logo}
-             className={classes.Logo}
-             alt="logo"
-           />
-         
+              <img
+                src={Logo}
+                className={classes.Logo}
+                alt="logo"
+              />
           </Tabs>
+
           {isMatch ? (
-            <>
-              <DrawerComponent />
-            </>
-          ) : (
+              <>
+                <DrawerComponent />
+              </>
+            ) : 
+            (
             <>
               <Tabs
                 onChange={handleClickTab}
@@ -108,18 +107,19 @@ const Navbar = ({token, setToken}) => {
                 indicatorColor="secondary"
                 value={value}
               >
-                <Tab
-                  disableRipple
-                  icon={<FiBookOpen className={classes.icons} />}
-                  label="Home"
-                  to='/'
-                  component={Link}
-                />
+                
+              <Tab
+                disableRipple
+                icon={<FiBookOpen className={classes.icons} />}
+                label="Home"
+                to='/'
+                component={Link}
+              />
                 <Tab
                   disableRipple
                   icon={<RiMoneyPoundCircleLine className={classes.icons} />}
                   label="Quiz"
-                  to='/fees'
+                  to='/quiz'
                   component={Link}
                   
                 />
@@ -162,7 +162,7 @@ const Navbar = ({token, setToken}) => {
         open={Boolean(anchorEl)}
         onClose={handleCloseMenu}
       >
-        {token
+        {token 
           ?
           <>
           <MenuItem component={Link} to="/my-acount">My Account</MenuItem>

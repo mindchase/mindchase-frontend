@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../images/logo.png'
 import Link from '@material-ui/core/Link'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import './Footer.css';
 import {
   Grid,
   ListItem,
@@ -10,13 +11,11 @@ import {
   makeStyles,
   Hidden,
 } from '@material-ui/core';
-
 import {
   FcPhone,
   FcOnlineSupport,
   FcVoicemail,
 } from 'react-icons/fc';
-import './Footer.css';
 
 
 const useStyles = makeStyles(theme => ({
@@ -30,8 +29,13 @@ const useStyles = makeStyles(theme => ({
   logo: {
     fontSize: '8rem',
     color: 'yellow',
-  },
-}));
+  }
+
+}
+
+
+
+));
 
 const FooterComponent = () => {
   const classes = useStyles();
@@ -57,9 +61,9 @@ const FooterComponent = () => {
                 <List dense>
                   <ListItem>
                     <ListItemAvatar>
-                      <LinkedInIcon className={classes.footer_icons}  />
-                      
+                      <LinkedInIcon className={classes.footer_icons}  />    
                     </ListItemAvatar>
+                    
                     <ListItem className={classes.text}>LinkedIn</ListItem>
                   </ListItem> 
 

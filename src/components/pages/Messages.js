@@ -35,8 +35,8 @@ const Messages = () => {
     <>
       <div className={classes.conatainer} maxWidth={false}>
         <Hidden mdDown>
-          <h1 className={classes.title}>Your Classroom</h1>
-          <p className={classes.text}>Your Graduate School of management</p>
+          <h1 className={classes.title}>Messages</h1>
+          <p className={classes.text}>YChat with me</p>
 
           <Button variant='contained' color='secondary'>
             Doven you can putt your compenent hier my friend
