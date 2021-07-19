@@ -9,7 +9,7 @@ import "./WorkshopBodyHeader.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: "100%",
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -17,27 +17,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const WorkshopsBody = (props) => {
-  
+const WorkshopsBody = ({title}) => {
   const classes = useStyles();
-  
+
   return (
     <>
-      {/* header intro & place for video/ prezzie ? 
-      */}
+      {/* header intro & place for video/ prezzie ?
+       */}
       <div className="workshopBodyHeader">
-        <h2>Title of workshop - header comp</h2>
+        <h2>{title} automate this step weasel</h2>
         <div>
-          <h3>Some space to show vid/ ppt/ pdf</h3>
-
-
-
+          <h3>convert to pdf - can also do iframe in that case</h3>
+          <h3>convert presentations to slideshows</h3>
+        </div>
+        <div>
+          in iframe, can process as big string, then search and replace width/
+          height for our prefered size
         </div>
       </div>
 
       {/* course content - accordion */}
       <div className={classes.root}>
-      <h2>Workshop content</h2>
+        <h2>Workshop content</h2>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -77,12 +78,11 @@ const WorkshopsBody = (props) => {
             id="panel3a-header"
           >
             <Typography className={classes.heading}>
-              Disabled Accordion
+              lol
             </Typography>
           </AccordionSummary>
         </Accordion>
       </div>
-
     </>
   );
 };

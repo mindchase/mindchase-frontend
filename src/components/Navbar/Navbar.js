@@ -12,7 +12,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
-
+import { positions } from '@material-ui/system';
 import DrawerComponent from "./DrawerComponent/DrawerComponent";
 import { GiBookAura } from "react-icons/gi";
 import { FiBookOpen } from "react-icons/fi";
@@ -20,11 +20,18 @@ import { RiMoneyPoundCircleLine } from "react-icons/ri";
 import MessageIcon from '@material-ui/icons/Message';
 import { ImHappy } from "react-icons/im";
 import { Link } from "react-router-dom";
-
+import Logo from '../../images/logo.png'
 
 const useStyles = makeStyles((theme) => ({
+  Logo:{
+    width: '200px', 
+    height: '100px',
+    color:'red',
+    position:'relative',
+  },
+
   logo: {
-    fontSize: "1.9rem",
+    fontSize: "20rem",
     [theme.breakpoints.down("md")]: {
       fontSize: "1.1rem",
     },
@@ -39,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
   },
   iconLogo: {
-    color: "yellow",
+    color: "red",
     fontSize: "3rem",
   },
   icons: {
@@ -47,8 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = () => {
-  //Hooks
+const Navbar = ({token, setToken}) => {
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   //Boolean(anchorEl) This is use to convert a null value in to a boolean
@@ -56,10 +62,9 @@ const Navbar = () => {
 
   const classes = useStyles();
 
-  const theme = useTheme(); //Get a copy of our default theme in our component so that we can access the breakpoints and pass the useMediaQuery
-
+  const theme = useTheme(); 
+  //Get a copy of our default theme in our component so that we can access the breakpoints and pass the useMediaQuery
   const isMatch = useMediaQuery(theme.breakpoints.down("sm"));
-
   //Functions
   const handleClickTab = (e, newValue) => {
     //The second value contains the current index
@@ -73,18 +78,28 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const logOut = () => {
+    setToken("")
+  }
+
   return (
     <>
       <AppBar elevation={0} color="primary">
         <Toolbar>
-          <Typography>
-            <GiBookAura className={classes.iconLogo} />
-          </Typography>
+          <Tabs>
+              <img
+                src={Logo}
+                className={classes.Logo}
+                alt="logo"
+              />
+          </Tabs>
+
           {isMatch ? (
-            <>
-              <DrawerComponent />
-            </>
-          ) : (
+              <>
+                <DrawerComponent />
+              </>
+            ) : 
+            (
             <>
               <Tabs
                 onChange={handleClickTab}
@@ -92,26 +107,27 @@ const Navbar = () => {
                 indicatorColor="secondary"
                 value={value}
               >
-                <Tab
-                  disableRipple
-                  icon={<FiBookOpen className={classes.icons} />}
-                  label="Workshop"
-                  to='/Workshop'
-                  component={Link}
-                />
+                
+              <Tab
+                disableRipple
+                icon={<FiBookOpen className={classes.icons} />}
+                label="Home"
+                to='/'
+                component={Link}
+              />
                 <Tab
                   disableRipple
                   icon={<RiMoneyPoundCircleLine className={classes.icons} />}
-                  label="Fee"
-                  to='/fees'
+                  label="Quiz"
+                  to='/quiz'
                   component={Link}
                   
                 />
                 <Tab
                   disableRipple
                   icon={<MessageIcon className={classes.icons} />}
-                  label="Massges"
-                  to='/masseges'
+                  label="Messages"
+                  to='/messages'
                   component={Link}
                 />
 
@@ -119,7 +135,7 @@ const Navbar = () => {
                   disableRipple
                   icon={<ImHappy className={classes.icons} />}
                   label="About"
-                  to='/About'
+                  to='/about'
                   component={Link}
                 />
               </Tabs>
@@ -146,16 +162,28 @@ const Navbar = () => {
         open={Boolean(anchorEl)}
         onClose={handleCloseMenu}
       >
-        <MenuItem component={Link} to="/my-acount">My Account</MenuItem>
-        <MenuItem component={Link} to="/login">
-          login
-        </MenuItem>
-        <MenuItem component={Link} to="/register">
-          Register
-        </MenuItem>
-        <MenuItem component={Link} to="/masseges">
-          Masseges
-        </MenuItem>
+        {token 
+          ?
+          <>
+          <MenuItem component={Link} to="/my-acount">My Account</MenuItem>
+          <MenuItem component={Link} to="/messages">
+            Messages
+          </MenuItem>
+          <MenuItem onClick={logOut}>
+            logout
+          </MenuItem>
+          </>
+          :
+          <>
+          <MenuItem component={Link} to="/login">
+            login
+          </MenuItem>
+          <MenuItem component={Link} to="/register">
+            Register
+          </MenuItem>
+          </>
+        }
+        
       </Menu>
     </>
   );

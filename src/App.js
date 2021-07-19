@@ -1,56 +1,78 @@
-import React from "react";
 import Register from "./components/users/Registration";
 import ForgotPassword from "./components/users/ForgotPassword";
 import NewPassword from "./components/users/NewPassword";
-import {
-  Route,
-  BrowserRouter as Router,
-  Switch,
-} from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Login from "./components/users/Login";
 import Fees from "./components/pages/Fees";
-import Massges from './components/pages/Massges'
-import {ThemeProvider, CssBaseline } from "@material-ui/core";
+import Messages from './components/pages/Messages'
+import { ThemeProvider, CssBaseline } from "@material-ui/core";
 import HomeBanner from "./components/HomeBanner/HomeBanner";
 import Navbar from "./components/Navbar/Navbar";
 import theme from "./utils/theme";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
-// import axios from 'axios'
-// axios.defaults.baseUrl = 'http://localhost:3002'
+import Workshop from "./components/Workshops/WorkshopBody"
+import AddQuiz from "./components/quiz/AddQuiz"
+import useToken from './components/useToken';
+import YoutubePlayer from './components/video/YoutubePlayer'
 
 const App = () => {
+  const { token, setToken } = useToken();
   return (
     <>
       <Router>
+    
         <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Navbar />
+        <CssBaseline />
+          <header>
+          <Navbar token={token} setToken={setToken} />
+          </header>  
           <Switch>
-            <Route
-              exact
-              path="/Workshop"
-              render={(props) => <HomeBanner {...props} />}
-            />
-            <Route  path="/fees" render={(props) => <Fees {...props} />} />
-            <Route  path="/masseges" render={(props) => <Massges {...props} />} />
-            <Route path="/login" render={(props) => <Login {...props} />} />
-            <Route
-              path="/register"
-              render={(props) => <Register {...props} />}
-            />
-            <Route
-              exact
-              path="/forgotpassword"
-              render={(props) => <ForgotPassword {...props} />}
-            />
-            <Route
-              exact
-              path="/newpassword"
-              render={(props) => <NewPassword {...props} />}
-            />
+            <Route  path="/"
+                     exact
+                      component={HomeBanner}    />
+
+            {token  &&  <>
+            <Route path="/workshops"
+            component={Workshop} />
+            <Route  path="/messages" 
+               render={(props) => <Messages {...props} setToken ={setToken} />} />  </>
+            
+            }  
+                  
+              <Route  path="/quiz" 
+                      component={AddQuiz} />
+              
+              
+                
+              <Route path="/login" 
+                render={(props) => <Login {...props} setToken={setToken} />}  />
+
+              <Route path="/fees" 
+                render={(props) => <Fees {...props}   />} />
+
+              <Route path="/register"
+                render={(props) => <Register {...props} setToken={setToken} /> }/>
+
+              <Route  path="/forgotPassword"
+                render={(props) => <ForgotPassword {...props} setToken={setToken} />}/>
+                  
+              
+                
+                
+
           </Switch>
-          <FooterComponent />
+          <div>
+            <div>
+            </div>
+            {
+              token && <YoutubePlayer />
+            }
+            
+          </div>
         </ThemeProvider>
+      <footer>
+        <FooterComponent />
+      </footer>
       </Router>
     </>
   );
