@@ -51,22 +51,24 @@ function AddQuiz() {
         <div>
 
             <p>{error}</p>
-            <form className="container containerM">
+            <form className=" containerM">
 
                 <textarea onChange={inputChange} name="question" value={input.question} className="question" ></textarea><br />
 
-                <label>Type the answers below and check the checkbox for correct answers </label>  <br />
-                <input onChange={inputChange} type="checkbox" name="checkbox1" {...(input.checkbox1 ? "checked" : "")} />
-                <input onChange={inputChange} type="text" name="answer1" value={input.answer1} /> <br />
+                <div className="answer">
+                    <label>Type the answers below and check the checkbox for correct answers </label>  <br />
+                    <input onChange={inputChange} type="checkbox" name="checkbox1" {...(input.checkbox1 ? "checked" : "")} />
+                    <input onChange={inputChange} type="text" name="answer1" value={input.answer1} /> <br />
 
-                <input onChange={inputChange} type="checkbox" name="checkbox2" {...(input.checkbox2 ? "checked" : "")} />
-                <input onChange={inputChange} type="text" name="answer2" value={input.answer2} /> <br />
+                    <input onChange={inputChange} type="checkbox" name="checkbox2" {...(input.checkbox2 ? "checked" : "")} />
+                    <input onChange={inputChange} type="text" name="answer2" value={input.answer2} /> <br />
 
 
-                <input onChange={inputChange} type="checkbox" name="checkbox3" {...(input.checkbox3 ? "checked" : "")} />
-                <input onChange={inputChange} type="text" name="answer3" value={input.answer3} /> <br />
+                    <input onChange={inputChange} type="checkbox" name="checkbox3" {...(input.checkbox3 ? "checked" : "")} />
+                    <input onChange={inputChange} type="text" name="answer3" value={input.answer3} /> <br />
+                </div>
 
-                <div>
+                <div className="button">
                     <button onClick={submit}>save</button>
                     <button>Next</button>
                     <button>Back</button>

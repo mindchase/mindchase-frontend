@@ -1,14 +1,27 @@
 .containerM {
     background-color: rgb(170, 172, 153);
-    margin-top: 75px;
+    min-height: 250px;
+    margin: 150px;
+    width: 500px;
     border-radius: 10px;
 }
 
-.containerM >* {
+/* .containerM >* {
     border-radius: 5px;
     box-shadow: 2xp 2px;
-}
+} */
 
 .question {
-    width: 500px;
+    width: 450px;
+    margin: 10px 10px 10px 20px;
+    min-height: 70px;
+}
+
+.answer {
+    margin: 10px 10px 15px 20px;
+}
+
+.button {
+    margin: 10px 10px 20px 20px;
+
 }
