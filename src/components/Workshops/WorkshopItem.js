@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 
     },
   text1:{
-      color:'white'
+      color:'black'
     },
     root2:{
       position :"absolute",
