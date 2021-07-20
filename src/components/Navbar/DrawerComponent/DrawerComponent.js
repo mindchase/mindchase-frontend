@@ -72,6 +72,7 @@ const DrawerComponent = () => {
         onClick={() => setOpenDrawer(!openDrawer)}
         disableRipple
       >
+        
         <MenuIcon className={classes.menuIconToggle} />
       </IconButton>
     </>
