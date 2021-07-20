@@ -3,6 +3,10 @@ import logo from '../../images/logo.png'
 import Link from '@material-ui/core/Link'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import './Footer.css';
+import { Icon, InlineIcon } from '@iconify/react';
+import InstagramIcon from '@material-ui/icons/Instagram';
+
+
 import {
   Grid,
   ListItem,
@@ -15,13 +19,18 @@ import {
   FcPhone,
   FcOnlineSupport,
   FcVoicemail,
+  FcLeftDown2,
 } from 'react-icons/fc';
 
 
 const useStyles = makeStyles(theme => ({
   footer_icons: {
-    fontSize: '2rem',
+    fontSize: '8rem',
     color: 'blue'
+  },
+  Follow:{
+    color:'blue',
+    align: 'left',
   },
   text: {
     fontSize: '1.1rem',
@@ -29,11 +38,21 @@ const useStyles = makeStyles(theme => ({
   logo: {
     fontSize: '8rem',
     color: 'yellow',
+  },
+
+  LinkedInIcon:{
+    fontSize: '3rem',
+    color: 'blue' 
+  },
+  instagramIcon:{
+    height:'8rm',
+    width:'9rm',
+    color:'#EE82EE',
+    fontSize: 40 ,
   }
 
+
 }
-
-
 
 ));
 
@@ -41,6 +60,7 @@ const FooterComponent = () => {
   const classes = useStyles();
   return (
     <div className='footer'>
+
       <Hidden smDown>
         <Grid
           container
@@ -48,43 +68,36 @@ const FooterComponent = () => {
           justify='space-around'
           alignItems='center'>
           <Grid item sm={12} xs={12} md={4}>
-            <div className='childe1__container'>
+              <div className='childe1__container'>
               <div>
-              <img src={logo} alt="Logo" styles="width:2em; hight:3em;" />;
+                <img src={logo} alt="Logo" styles="width:2em; hight:3em;" />
               </div>
-            </div>
-          </Grid>
+              </div>
+            </Grid>
 
           <Grid sm={12} xs={12} md={4}>
             <div className='childe2__container'>
               <div className='childe2__title'>
+              <h3 className= {classes.Follow}>Follow us : </h3>
+
                 <List dense>
                   <ListItem>
-                    <ListItemAvatar>
-                      <LinkedInIcon className={classes.footer_icons}  />    
-                    </ListItemAvatar>
-                    
-                    <ListItem className={classes.text}>LinkedIn</ListItem>
+                      <ListItemAvatar>
+                        <LinkedInIcon className={classes.LinkedInIcon}  />    
+                      </ListItemAvatar>
+                      <ListItem className={classes.text}>LinkedIn 
+                        <div> </div>
+                      </ListItem>
                   </ListItem> 
 
                   <ListItem>
-                    <ListItemAvatar>
-                      <FcPhone className={classes.footer_icons} />
-                    </ListItemAvatar>
-                    <ListItem className={classes.text}>+49410215455</ListItem>
-                  </ListItem>
-                   
-                  <ListItem>
-                    <ListItemAvatar>
-                      <FcVoicemail className={classes.footer_icons} />
-                    </ListItemAvatar>
-                    <ListItem className={classes.text}>
-                      We answer within 2 hours during working days
+                      <ListItemAvatar>
+                        <InstagramIcon className={classes.instagramIcon}/>
+                      </ListItemAvatar>
                     </ListItem>
-                  </ListItem>
                 </List>
                 </div>
-                </div>
+              </div>
           </Grid>
 
           <Grid sm={12} xs={12} md={4}>
@@ -98,8 +111,10 @@ const FooterComponent = () => {
               </div>
             </div>
           </Grid>
+
         </Grid>
       </Hidden>
+     
     </div>
   );
 };

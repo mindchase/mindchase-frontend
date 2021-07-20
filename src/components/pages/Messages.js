@@ -39,7 +39,7 @@ const Messages = () => {
           <p className={classes.text}>YChat with me</p>
 
           <Button variant='contained' color='secondary'>
-            Doven you can putt your compenent hier my friend
+            Doven you can put your competent hire my friend
           </Button>
         </Hidden>
       </div>
