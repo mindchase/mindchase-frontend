@@ -4,15 +4,11 @@ import WorkshopItem from "./WorkshopItem";
 import { Box, Grid } from "@material-ui/core";
 
 const Workshops = ({courses,setCourses}) => {
-
-  //const [courses, setCourses] = useState([])
-  // State move to APP component
-
+ 
   return (
     <>
       <Box p={10}>
         <Grid container spacing={8}
-
         >
           {courses &&  courses.map((card, id) => {
             return (
@@ -23,6 +19,11 @@ const Workshops = ({courses,setCourses}) => {
           })}
         </Grid>
       </Box>
+         
+
+
+
+
     </>
   );
 };

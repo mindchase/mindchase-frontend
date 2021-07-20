@@ -1,9 +1,7 @@
 import React from 'react';
 import logo from '../../images/logo.png'
-import Link from '@material-ui/core/Link'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import './Footer.css';
-import { Icon, InlineIcon } from '@iconify/react';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
 
@@ -15,12 +13,7 @@ import {
   makeStyles,
   Hidden,
 } from '@material-ui/core';
-import {
-  FcPhone,
-  FcOnlineSupport,
-  FcVoicemail,
-  FcLeftDown2,
-} from 'react-icons/fc';
+
 
 
 const useStyles = makeStyles(theme => ({

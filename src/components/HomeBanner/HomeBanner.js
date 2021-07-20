@@ -1,7 +1,7 @@
 import React,{useState ,useEffect }from "react";
-import { Container, Hidden, makeStyles, Button } from '@material-ui/core';
+import { Hidden, makeStyles, Button } from '@material-ui/core';
 import MainContent from '../MainContent/MainContent';
-import IconsGrid from '../IconsGrid/IconsGrid';
+//import IconsGrid from '../IconsGrid/IconsGrid';
 import background from '../../images/digitalcampus_with_logo.jpg'
 import axios from 'axios'
 import Workshops from "../Workshops/Workshops";
