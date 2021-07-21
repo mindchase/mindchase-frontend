@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { useForm } from 'react-hook-form'
+//import { useForm } from 'react-hook-form'
 import { Grid, Paper, TextField, Typography, Button, Avatar, Link} from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -25,10 +25,10 @@ const Login = ({ setToken }) => {
         });
 
         setToken(response.data.token);
-        history.push("/")
+        history.push("/workshops")
       }
 
-    const paperStyle = { padding: 25, height: '78vh', width: 310, margin: "20px auto" }
+    const paperStyle = { padding: 25, height: '75vh', width: 310, margin: "130px auto" }
     const avatarStyle = { backgroundColor: '#1bbd7e' }
     const btnstyle = { margin: '8px 0' }
 
