@@ -53,7 +53,7 @@ const App = () => {
               <Route path="/register"
                 render={(props) => <Register {...props} setToken={setToken} /> }/>
 
-              <Route  path="/forgotPassword"
+              <Route  path="/forgotpassword"
                 render={(props) => <ForgotPassword {...props} setToken={setToken} />}/>
 
              
