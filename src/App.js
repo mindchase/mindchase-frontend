@@ -4,7 +4,6 @@ import ForgotPassword from "./components/users/ForgotPassword";
 import { Route, BrowserRouter as Router, Switch ,Redirect} from "react-router-dom";
 import Login from "./components/users/Login";
 import Fees from "./components/pages/Fees";
-import Messages from './components/pages/Messages'
 import { ThemeProvider, CssBaseline ,createTheme} from "@material-ui/core";
 import HomeBanner from "./components/HomeBanner/HomeBanner";
 import Navbar from "./components/Navbar/Navbar";
@@ -14,7 +13,7 @@ import AddQuiz from "./components/quiz/AddQuiz"
 import useToken from './components/useToken';
 import Welcome from './components/pages/Welcome'
 import VideoPlayer from "./components/video/VideoPlayer";
-
+import Chat from './components/chat/Chat'
 const theme = createTheme({
   palette: {
     primary: {
@@ -71,7 +70,7 @@ const App = () => {
           />
 
                 <Route  path="/messages" 
-                  render={ (props) => <Messages {...props} setToken ={setToken}  />  } /> 
+                  render={ (props) => <Chat {...props} setToken ={setToken}  />  } /> 
               </>  :
               <Redirect to ='/welcome' />
             }  
