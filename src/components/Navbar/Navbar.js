@@ -105,14 +105,23 @@ const Navbar = ({token, setToken}) => {
                         />
                         <Tab
                           disableRipple
-                          label="Chat"
+                          label="Massages"
                           to='/messages'
                           component={Link}
                         />
 
+                        
                         <Tab
                           disableRipple
-                          label="Contact"
+                          label="Workshop"
+                          to='/workshops'
+                          component={Link}
+                        />
+
+
+                        <Tab
+                          disableRipple
+                          label="About"
                           to='/about'
                           component={Link}
                         />
