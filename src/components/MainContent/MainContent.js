@@ -2,6 +2,8 @@ import React from 'react';
 import { Grid, Button, makeStyles, Typography } from '@material-ui/core';
 import school from '../../images/scho.svg';
 import './MainContent.css';
+import { Link } from "react-router-dom";
+
 
 const useStyles = makeStyles(theme => ({
   content: {
@@ -51,7 +53,10 @@ const MainContent = () => {
             <p className={classes.content}>
             You never have enough time and every day is just to short to get things done? What if you learn how to structure your day, how to prioritize your tasks and still have enough time for your friends, family and hobbies?
             </p>
-            <Button variant='outlined' className={classes.btn}>
+            <Button variant='outlined' className={classes.btn}
+               to='/register'
+               component={Link} 
+            >
               Read More
             </Button>
           </div>
@@ -65,7 +70,10 @@ const MainContent = () => {
             <p className={classes.content}>
             wouldn't it be great to know exactly what drives you most and helps you to channel your strengths and achieve your goal easily?
             </p>
-            <Button className={classes.btn} variant='outlined' color='primary'>
+            <Button className={classes.btn} variant='outlined' color='primary'
+               to='/register'
+               component={Link} 
+            >
               Read More
             </Button>
           </div>

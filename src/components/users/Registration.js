@@ -21,9 +21,9 @@ const Registration=()=>{
         })   
     }
 
-    const paperStyle={padding :25,height:'78vh',width:310, margin:"20px auto"}
+    const paperStyle={padding :25,height:'78vh',width:310, margin:"180px auto"}
     const avatarStyle={backgroundColor:'#1bbd7e'}
-    const btnstyle={margin:'8px 0'}
+    const btnstyle={margin:'8px 0' ,color:'red'}
 
     return(
         <form onSubmit={handleSubmit(submit)} >
@@ -50,6 +50,7 @@ const Registration=()=>{
                     rules={{...register("email", {required: true, pattern: /^\S+@\S+$/i})}}
                     render={({ field }) => <Input {...field} fullWidth />}
                     placeholder='Enter email'
+                    type='email'
                 />
 
               

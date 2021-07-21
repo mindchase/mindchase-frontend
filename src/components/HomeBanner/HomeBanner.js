@@ -1,10 +1,7 @@
-import React,{useState ,useEffect }from "react";
+import React from "react";
 import { Hidden, makeStyles, Button } from '@material-ui/core';
 import MainContent from '../MainContent/MainContent';
-//import IconsGrid from '../IconsGrid/IconsGrid';
 import background from '../../images/digitalcampus_with_logo.jpg'
-import axios from 'axios'
-import Workshops from "../Workshops/Workshops";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
@@ -31,17 +28,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const HomeBanner = () => {
-  const [courses, setCourses] = useState([])
-
-  useEffect(() => {
-    const getCourses = async () => {
-      const response = await axios.get("/courses")
-     // console.log("hey",response.data)
-      setCourses(response.data)
-    }
-    getCourses()
-  }, [])
+const HomeBanner = () => { 
 
   const classes = useStyles();
   return (
@@ -50,16 +37,12 @@ const HomeBanner = () => {
      <Hidden>
           <h1 className={classes.title}>Digital Campus</h1>
           <Button variant='contained' color='secondary'
-             to='/register'
+             to='/login'
              component={Link}  >
             join us
           </Button>
       </Hidden>
-      </div>
-      <Workshops 
-          courses={courses}
-          />
-         
+      </div> 
       <MainContent />
     </>
   );

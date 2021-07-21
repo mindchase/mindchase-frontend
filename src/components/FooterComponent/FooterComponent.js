@@ -4,7 +4,6 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import './Footer.css';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
-
 import {
   Grid,
   ListItem,
@@ -107,7 +106,7 @@ const FooterComponent = () => {
 
         </Grid>
       </Hidden>
-     
+  
     </div>
   );
 };

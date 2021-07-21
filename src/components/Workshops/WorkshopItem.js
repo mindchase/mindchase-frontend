@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-
+import VideoPlayer from '../video/VideoPlayer'
 import {
       Card,
       CardActionArea,
@@ -16,14 +16,14 @@ const useStyles = makeStyles({
     root: {
       maxWidth: 300,
       position :"relative",
+    },
+    root1:{
+      marginTop:60,
+      marginLeft:90,
 
     },
   text1:{
       color:'black'
-    },
-    root2:{
-      position :"absolute",
-
     },
     media: {
       height: 140,
@@ -41,46 +41,41 @@ const WorkshopItem = (props) => {
   console.log("path:", path);
   
   return (
-    <>
+    <div className={classes.root1}>
       <Link to={`${url}/${props.route}`}
-     className={classes.link}
-  
-      >
+      className={classes.link}
+        >
 
         <Card
           className={classes.root}
-          // tooltip funcs
           onMouseEnter={() => setIsShown(true)}
-          onMouseLeave={() => setIsShown(false)}
-          
-        >
-          <CardActionArea>
-              <CardMedia
-                  className={classes.media}
-                  component="img"
-                  alt={props.alt}
-                  image={props.image}
-                  title={props.title}
-                  
+          onMouseLeave={() => setIsShown(false)}   
+            >
 
-               />
+            <CardActionArea>
+                <CardMedia
+                    className={classes.media}
+                    component="img"
+                    alt={props.alt}
+                    image={props.image}
+                    title={props.title}
+                  />
 
-              <CardContent >
-                  <Typography variant="h5" component="h2" 
-                       className={classes.text1}  align ='center'>
-                    {props.title}
-                  </Typography>
-                </CardContent>
-            </CardActionArea>
-        </Card>
+                <CardContent >
+                    <Typography variant="h5" component="h2" 
+                        className={classes.text1}  align ='center'>
+                      {props.title}
+                    </Typography>
+                  </CardContent>
+
+              </CardActionArea>
+          </Card>
       </Link>
 
       {isShown && (
         <Card
           className={classes.root}
-          variant="outlined"
-          
-          // // tooltip funcs
+          variant="outlined"   
           onMouseEnter={() => setIsShown(true)}
           onMouseLeave={() => setIsShown(false)}
         >
@@ -89,17 +84,17 @@ const WorkshopItem = (props) => {
               className={classes.title}
               color="red"
               gutterBottom
-              align = 'center'
-              
+              align = 'center'    
             >
+
               Fetch last updated: 01/2021
             </Typography>
             
             <Typography variant="h5" component="h2"
               className={classes.text1}
-              align = 'center'        
-            
+              align = 'center'         
             >
+
               <Link to={`${url}/${props.id}`}                  
                   className={classes.link}
      
@@ -110,13 +105,16 @@ const WorkshopItem = (props) => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" variant="contained" color="secondary">
+            <Button size="small" variant="contained" color="secondary"
+               to='/video-player'
+               component={Link} 
+            >
              Reade Moor
             </Button>
           </CardActions>
         </Card>
       )}
-    </>
+    </div>
   );
 };
 
