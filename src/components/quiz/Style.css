@@ -21,7 +21,40 @@
     margin: 10px 10px 15px 20px;
 }
 
-.button {
-    margin: 10px 10px 20px 20px;
+.answer >* {
+    color: #1A3457;
+    color: #FF1616;
+}
 
+.textS {
+    margin-left: 20px;
+}
+
+.button {
+    margin: 10px 20px 20px 20px;
+
+}
+
+.questionS {
+    width: 500px;
+    height: 200px;
+    margin: 150px auto auto 300px;
+    border: 2px red solid;
+    box-shadow: 2px 1px 1px 1px ;
+
+    /* justify-content: center;
+    justify-items: center; */
+
+}
+
+
+
+.answesS >* {
+    margin-left: 10px;
+}
+
+
+.buttonS {
+    margin: 80px 150px 0 20px;
+    margin-bottom: 100px;
 }
