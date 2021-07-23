@@ -9,6 +9,7 @@ import {
   Drawer,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from "react-router-dom";
 
 const DrawerComponent = () => {
   const useStyles = makeStyles((theme) => ({
@@ -61,7 +62,10 @@ const DrawerComponent = () => {
 
           <ListItem divider button onClick={() => setOpenDrawer(false)}>
             <ListItemIcon>
-              <ListItemText> Chat</ListItemText>
+              <ListItemText
+                  to='/messages'
+                  component={Link}
+              > Chat</ListItemText>
             </ListItemIcon>
           </ListItem>
         </List>

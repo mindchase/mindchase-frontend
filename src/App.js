@@ -33,9 +33,8 @@ const App = () => {
       <Router>
         <ThemeProvider theme={theme} >
         <CssBaseline />
-        <header>
            <Navbar token={token} setToken={setToken}   />
-        </header>  
+     
           <Switch>
             <Route  path="/"
                      exact
@@ -53,7 +52,7 @@ const App = () => {
               <Route path="/register"
                 render={(props) => <Register {...props} setToken={setToken} /> }/>
 
-              <Route  path="/forgotPassword"
+              <Route  path="/forgotpassword"
                 render={(props) => <ForgotPassword {...props} setToken={setToken} />}/>
 
              
@@ -83,7 +82,7 @@ const App = () => {
          
         </ThemeProvider>
       <footer>
-        <FooterComponent />
+       
       </footer>
       </Router>
     </>

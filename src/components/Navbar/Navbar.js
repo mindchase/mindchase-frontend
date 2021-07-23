@@ -34,6 +34,12 @@ const useStyles = makeStyles((theme) => ({
       tabsContainer: {
         marginLeft: "auto",
       },
+      AppBar:{
+        position:'relative',
+
+      }
+     
+
  
 }));
 
@@ -66,8 +72,8 @@ const Navbar = ({token, setToken}) => {
   return (
     <>
     <ThemeProvider  theme={theme}>
-          <AppBar elevation={0} className= {classes.AppBar} >
-            <Toolbar>
+          <AppBar elevation={0} className= {classes.AppBar} margin="190" >
+            <Toolbar className={classes.toolbar}>
               
               {isMatch ? (
                   <>

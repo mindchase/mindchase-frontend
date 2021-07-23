@@ -1,22 +1,21 @@
 import React,{useState ,useEffect }from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "./WorkshopBodyHeader.css";
-import VideoPlayer from '../video/VideoPlayer'
-import useToken from '../useToken';
-import {Card} from "@material-ui/core";
+//import useToken from '../useToken';
 import Workshops from "../Workshops/Workshops";
 import axios from 'axios'
 
-
 const useStyles = makeStyles((theme) => ({
-  video:{
-    align:'center',
-  }
-
+  text:{
+    color:' #1A3457',
+    textAlign:'center',
+    marginTop:10,
+  },
+  
 }));
 
 const WorkshopsBody = ({title}) => {
-  const { token} = useToken();
+ // const { token} = useToken();
   const classes = useStyles();
   const [courses, setCourses] = useState([])
 
@@ -30,15 +29,11 @@ const WorkshopsBody = ({title}) => {
 
   return (
     <>
+    <h1 className={classes.text}>start to chose workshops</h1>
    <Workshops 
           courses={courses}
           />
           
-          {/**    
-      <Card className={classes.video}   align='center' width= '100%' height='%100' >
-        {token && <VideoPlayer /> }     
-          </Card>
-*/}
     </>
   );
 };

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import VideoPlayer from '../video/VideoPlayer'
 import {
       Card,
       CardActionArea,
@@ -16,9 +15,10 @@ const useStyles = makeStyles({
     root: {
       maxWidth: 300,
       position :"relative",
+      backgroundColor:" #F0E7E1"
     },
     root1:{
-      marginTop:60,
+      marginTop:10,
       marginLeft:90,
 
     },
