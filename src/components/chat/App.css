@@ -47,13 +47,11 @@
 
 .ce-settings {
   background-color: rgb(240, 240, 240) !important;
-  margin-top: 65px;
 }
 
 .ce-autocomplete-input {
   border-radius: 6px !important;
   border: 1px solid #3b2a50 !important;
-
 }
 
 .ce-autocomplete-options {
@@ -77,14 +75,12 @@
   width: 100%;
   overflow: scroll;
   background-color: rgb(240, 240, 240);
-  margin-top :20px;
 }
 
 .chat-title-container {
   width: calc(100% - 36px);
-  padding: 20px;
+  padding: 18px;
   text-align: center;
-  margin-top: 20px;
 }
 
 .chat-title {
@@ -97,7 +93,7 @@
   color: #7554a0;
   font-weight: 600;
   font-size: 12px;
-  padding-top: 20px;
+  padding-top: 4px;
 }
 
 .message-row {
@@ -145,7 +141,6 @@
 .read-receipts {
   position: relative;
   bottom: 6px;
-  margin-top: 20px;
 }
 
 .read-receipt {

@@ -66,7 +66,7 @@ const Navbar = ({token, setToken}) => {
   return (
     <>
     <ThemeProvider  theme={theme}>
-          <AppBar elevation={0} className= {classes.AppBar} >
+          <AppBar position="relative" elevation={0} className= {classes.AppBar} >
             <Toolbar>
               
               {isMatch ? (
