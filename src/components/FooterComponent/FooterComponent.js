@@ -10,7 +10,6 @@ import {
   List,
   ListItemAvatar,
   makeStyles,
-  Hidden,
 } from '@material-ui/core';
 
 
@@ -41,6 +40,9 @@ const useStyles = makeStyles(theme => ({
     width:'9rm',
     color:'#EE82EE',
     fontSize: 40 ,
+  },
+  childe1__container:{
+    margin:50
   }
 
 
@@ -52,8 +54,7 @@ const FooterComponent = () => {
   const classes = useStyles();
   return (
     <div className='footer'>
-
-      <Hidden smDown>
+  
         <Grid
           container
           direction='row'
@@ -103,9 +104,9 @@ const FooterComponent = () => {
               </div>
             </div>
           </Grid>
-
+        
         </Grid>
-      </Hidden>
+     
   
     </div>
   );

@@ -26,13 +26,14 @@ const useStyles = makeStyles(theme => ({
       fontSize: '1.4rem',
       marginBottom: '20px',
     },
+   
 }));
 
 const HomeBanner = () => { 
 
   const classes = useStyles();
   return (
-    <>
+    <div className={classes.mainContent}>
       <div className={classes.conatainer} maxWidth={false}>
      <Hidden>
           <h1 className={classes.title}>Digital Campus</h1>
@@ -44,7 +45,8 @@ const HomeBanner = () => {
       </Hidden>
       </div> 
       <MainContent />
-    </>
+
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import VideoPlayer from '../video/VideoPlayer'
+import { Document, Page } from 'react-pdf';
+
 import {
       Card,
       CardActionArea,
@@ -16,9 +17,10 @@ const useStyles = makeStyles({
     root: {
       maxWidth: 300,
       position :"relative",
+      backgroundColor:" #F0E7E1"
     },
     root1:{
-      marginTop:60,
+      marginTop:10,
       marginLeft:90,
 
     },
@@ -34,6 +36,30 @@ const useStyles = makeStyles({
 });
 
 const WorkshopItem = (props) => {
+  /*
+
+ i tray to insert the  as pdf File 
+
+const [numPages ,setNumPages]=useState(null)
+const [pageNumber,setPageNumber]=useState(1)
+
+function onDocumentLoadSuccess({ numPages }) {
+  setNumPages(numPages);
+}
+
+return (
+  <div>
+    <Document
+      file="somefile.pdf"
+      onLoadSuccess={onDocumentLoadSuccess}
+    >
+      <Page pageNumber={pageNumber} />
+    </Document>
+    <p>Page {pageNumber} of {numPages}</p>
+  </div>
+);
+}
+*/
   const classes = useStyles();
   const [isShown, setIsShown] = useState(false);
   const { path, url } = useRouteMatch();
@@ -59,6 +85,7 @@ const WorkshopItem = (props) => {
                     alt={props.alt}
                     image={props.image}
                     title={props.title}
+
                   />
 
                 <CardContent >
@@ -66,6 +93,8 @@ const WorkshopItem = (props) => {
                         className={classes.text1}  align ='center'>
                       {props.title}
                     </Typography>
+
+
                   </CardContent>
 
               </CardActionArea>
@@ -89,10 +118,10 @@ const WorkshopItem = (props) => {
 
               Fetch last updated: 01/2021
             </Typography>
-            
-            <Typography variant="h5" component="h2"
+            <Typography variant="h5" component="h2" 
               className={classes.text1}
-              align = 'center'         
+              align = 'center' 
+              presentation={props.presentation}        
             >
 
               <Link to={`${url}/${props.id}`}                  
@@ -109,7 +138,7 @@ const WorkshopItem = (props) => {
                to='/video-player'
                component={Link} 
             >
-             Reade Moor
+           go to videos-workshops
             </Button>
           </CardActions>
         </Card>

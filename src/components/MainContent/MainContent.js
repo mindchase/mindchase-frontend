@@ -33,13 +33,14 @@ const useStyles = makeStyles(theme => ({
     fontSize: '2rem',
     padding: '90px',
   },
+
 }));
 
 const MainContent = () => {
   const classes = useStyles();
 
   return (
-    <>
+    <div className={classes.big}>
       <Grid container justify='space-around' alignItems='center'>
         <Grid md={5} item>
           <div className='me'>
@@ -89,7 +90,7 @@ const MainContent = () => {
           </div>
         </Grid>
       </Grid>
-    </>
+    </div>
   );
 };
 

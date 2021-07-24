@@ -33,9 +33,8 @@ const App = () => {
       <Router>
         <ThemeProvider theme={theme} >
         <CssBaseline />
-        <header>
            <Navbar token={token} setToken={setToken}   />
-        </header>  
+     
           <Switch>
             <Route  path="/"
                      exact
@@ -83,7 +82,7 @@ const App = () => {
          
         </ThemeProvider>
       <footer>
-        <FooterComponent />
+       
       </footer>
       </Router>
     </>

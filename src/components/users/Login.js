@@ -78,7 +78,9 @@ const Login = ({ setToken }) => {
 
                     <Typography > Do you have an account ?
                         <Link href="Register" 
-                        type="submit" > Sign Up  </Link>
+                        type="submit"
+                        color="red"
+                        > Sign Up  </Link>
                     </Typography>
 
                 </Paper>

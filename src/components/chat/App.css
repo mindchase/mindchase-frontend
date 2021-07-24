@@ -75,6 +75,7 @@
   width: 100%;
   overflow: scroll;
   background-color: rgb(240, 240, 240);
+  margin-top:20px;
 }
 
 .chat-title-container {
