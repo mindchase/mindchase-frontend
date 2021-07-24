@@ -44,7 +44,10 @@ const DrawerComponent = () => {
 
           <ListItem divider button onClick={() => setOpenDrawer(false)}>
             <ListItemIcon>
-              <ListItemText> Quiz</ListItemText>
+              <ListItemText
+                to='/quiz'
+                component={Link}
+              > Quiz</ListItemText>
             </ListItemIcon>
           </ListItem>
 

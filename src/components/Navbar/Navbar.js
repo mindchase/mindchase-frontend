@@ -72,8 +72,8 @@ const Navbar = ({token, setToken}) => {
   return (
     <>
     <ThemeProvider  theme={theme}>
-          <AppBar elevation={0} className= {classes.AppBar} margin="190" >
-            <Toolbar className={classes.toolbar}>
+          <AppBar position="relative" elevation={0} className= {classes.AppBar} >
+            <Toolbar>
               
               {isMatch ? (
                   <>
@@ -111,7 +111,7 @@ const Navbar = ({token, setToken}) => {
                         />
                         <Tab
                           disableRipple
-                          label="Massages"
+                          label="chat"
                           to='/messages'
                           component={Link}
                         />
@@ -119,7 +119,7 @@ const Navbar = ({token, setToken}) => {
                         
                         <Tab
                           disableRipple
-                          label="Workshop"
+                          label="Workshops"
                           to='/workshops'
                           component={Link}
                         />
@@ -127,7 +127,7 @@ const Navbar = ({token, setToken}) => {
 
                         <Tab
                           disableRipple
-                          label="About"
+                          label="HomePage"
                           to='/about'
                           component={Link}
                         />
@@ -160,7 +160,7 @@ const Navbar = ({token, setToken}) => {
               ?
               <>
                 <MenuItem component={Link} to="/my-account">My Account</MenuItem>
-                <MenuItem component={Link} to="/messages">  Messages </MenuItem>
+                <MenuItem component={Link} to="/messages">  Chat</MenuItem>
                 <MenuItem onClick={logOut} to = "/"> logout </MenuItem>
               </>
               :

@@ -10,8 +10,9 @@ const Chat = () => {
   if (!localStorage.getItem('username')) return <LoginForm />;
 
   return (
-    <ChatEngine
-      height="100vh"
+    <ChatEngine 
+      margin="50px" 
+      height="90vh"
       projectID={projectID}
       userName={localStorage.getItem('username')}
       userSecret={localStorage.getItem('password')}
