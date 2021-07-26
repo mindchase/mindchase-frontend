@@ -25,3 +25,4 @@ const Chat = () => {
 // infinite scroll, logout, more customizations...
 
 export default Chat;
+
