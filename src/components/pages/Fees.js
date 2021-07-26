@@ -1,7 +1,7 @@
 import React from 'react';
 import { Hidden, makeStyles, Button } from '@material-ui/core';
 import MainContent from '../MainContent/MainContent';
-import IconsGrid from '../IconsGrid/IconsGrid';
+
 
 const useStyles = makeStyles(theme => ({
   conatainer: {
@@ -43,7 +43,7 @@ const Fees = () => {
           </Button>
         </Hidden>
       </div>
-      <IconsGrid />
+   
       <MainContent />
     </>
   );

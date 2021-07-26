@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, Button } from '@material-ui/core';
 import MainContent from '../MainContent/MainContent';
-import IconsGrid from '../IconsGrid/IconsGrid';
+
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
@@ -44,7 +44,6 @@ const Messages = () => {
             Doven you can put your competent hire my friend
           </Button>   
       </div>
-      <IconsGrid />
       <MainContent />
     </>
   );

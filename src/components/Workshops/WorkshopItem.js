@@ -87,7 +87,7 @@ const WorkshopItem = (props) => {
               align = 'center'    
             >
 
-              Fetch last updated: 01/2021
+              
             </Typography>
             
             <Typography variant="h5" component="h2"
@@ -95,7 +95,7 @@ const WorkshopItem = (props) => {
               align = 'center'         
             >
 
-              <Link to={`${url}/${props.id}`}                  
+              <Link to={`${url}/${props.route}`}                  
                   className={classes.link}
      
                   >{props.title}</Link>
@@ -109,7 +109,7 @@ const WorkshopItem = (props) => {
                to='/video-player'
                component={Link} 
             >
-             Reade Moor
+             Go to Video
             </Button>
           </CardActions>
         </Card>
