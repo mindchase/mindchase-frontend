@@ -9,11 +9,11 @@ import HomeBanner from "./components/HomeBanner/HomeBanner";
 import Navbar from "./components/Navbar/Navbar";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Workshop from "./components/Workshops/WorkshopBody"
-import AddQuiz from "./components/quiz/AddQuiz"
 import useToken from './components/useToken';
 import Welcome from './components/pages/Welcome'
 import VideoPlayer from "./components/video/VideoPlayer";
 import Chat from './components/chat/Chat'
+import Quiz from './components/quiz/Quiz'
 const theme = createTheme({
   palette: {
     primary: {
@@ -63,6 +63,9 @@ const App = () => {
                 <Route path="/workshops"
                 render={ (props) => <Workshop {...props} setToken ={setToken}  />  } 
                 component={Workshop} />
+                    <Route path="/Quiz"
+                render={ (props) => <Quiz {...props} setToken ={setToken}  />  }  />
+
 
                   <Route path="/video-player" 
                   render={ (props) => <VideoPlayer {...props} setToken ={setToken}  />  } 
@@ -74,8 +77,7 @@ const App = () => {
               <Redirect to ='/welcome' />
             }  
                    
-              <Route  path="/quiz" 
-                  component={AddQuiz} />
+
 
               
           </Switch>
