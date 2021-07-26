@@ -32,8 +32,7 @@ const WorkshopsBody = ({title}) => {
     <h1 className={classes.text}>start to chose workshops</h1>
    <Workshops 
           courses={courses}
-          />
-          
+          />       
     </>
   );
 };
