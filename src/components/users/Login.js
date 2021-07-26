@@ -83,6 +83,13 @@ const Login = ({ setToken }) => {
                         > Sign Up  </Link>
                     </Typography>
 
+                    <Typography > Did you forget your Password?
+                        <Link href="ForgotPassword" 
+                        type="submit"
+                        color="red"
+                        > Forgot Password  </Link>
+                    </Typography>
+
                 </Paper>
             </form>
         </Grid>

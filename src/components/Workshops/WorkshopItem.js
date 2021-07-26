@@ -36,30 +36,6 @@ const useStyles = makeStyles({
 });
 
 const WorkshopItem = (props) => {
-  /*
-
- i tray to insert the  as pdf File 
-
-const [numPages ,setNumPages]=useState(null)
-const [pageNumber,setPageNumber]=useState(1)
-
-function onDocumentLoadSuccess({ numPages }) {
-  setNumPages(numPages);
-}
-
-return (
-  <div>
-    <Document
-      file="somefile.pdf"
-      onLoadSuccess={onDocumentLoadSuccess}
-    >
-      <Page pageNumber={pageNumber} />
-    </Document>
-    <p>Page {pageNumber} of {numPages}</p>
-  </div>
-);
-}
-*/
   const classes = useStyles();
   const [isShown, setIsShown] = useState(false);
   const { path, url } = useRouteMatch();
@@ -85,7 +61,7 @@ return (
                     alt={props.alt}
                     image={props.image}
                     title={props.title}
-
+                    presentation={props.presentation}
                   />
 
                 <CardContent >
@@ -93,10 +69,7 @@ return (
                         className={classes.text1}  align ='center'>
                       {props.title}
                     </Typography>
-
-
                   </CardContent>
-
               </CardActionArea>
           </Card>
       </Link>
@@ -111,23 +84,19 @@ return (
           <CardContent>
             <Typography
               className={classes.title}
-              color="red"
               gutterBottom
               align = 'center'    
             >
-
               Fetch last updated: 01/2021
             </Typography>
             <Typography variant="h5" component="h2" 
-              className={classes.text1}
-              align = 'center' 
-              presentation={props.presentation}        
+                        className={classes.text1}
+                        align = 'center' 
+                          
             >
 
-              <Link to={`${url}/${props.id}`}                  
-                  className={classes.link}
-     
-                  >{props.title}</Link>
+              <Link to={`${url}/${props.route}`}                  
+                  className={classes.link}>{props.title}</Link>
             </Typography>
             <Typography variant="body2" component="p">
               {props.description}
