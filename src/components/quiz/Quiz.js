@@ -59,6 +59,7 @@ export default function Quiz() {
 	};
 	return (
 		<div className='bodyQuiz'  >
+
 		<div className='quiz'>
 			{showScore ? (
 				<div className='score-section'>
@@ -67,7 +68,9 @@ export default function Quiz() {
 			) : (
 				<>
 					<div className='question-section'>
+						
 						<div className='question-count'>
+
 							<span>Question {currentQuestion + 1}</span>/{questions.length}
 						</div>
 						<div className='question-text'>{questions[currentQuestion].questionText}</div>
