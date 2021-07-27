@@ -49,7 +49,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3001",
   "devDependencies": {
     "@iconify-icons/mdi": "^1.1.16",
     "@iconify/react": "^1.1.4"

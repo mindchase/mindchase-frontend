@@ -14,6 +14,7 @@ import Welcome from './components/pages/Welcome'
 import VideoPlayer from "./components/video/VideoPlayer";
 import Chat from './components/chat/Chat'
 import Quiz from './components/quiz/Quiz'
+
 const theme = createTheme({
   palette: {
     primary: {

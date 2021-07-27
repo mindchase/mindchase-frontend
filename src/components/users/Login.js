@@ -8,7 +8,7 @@ import axios from 'axios'
 import {useHistory} from  'react-router-dom'
 
     function loginUser(credentials) {
-    return axios.post('/users/login', credentials) 
+    return axios.post(`${process.env.REACT_APP_API}/users/login`, credentials) 
     }
 
 

@@ -21,7 +21,7 @@ const WorkshopsBody = ({title}) => {
 
   useEffect(() => {
     const getCourses = async () => {
-      const response = await axios.get("/courses")
+      const response = await axios.get(`${process.env.REACT_APP_API}/courses`)
       setCourses(response.data)
     }
     getCourses()
