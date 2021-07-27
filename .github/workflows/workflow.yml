@@ -1,0 +1,30 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@main
+      - name: Deploy
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          ssh-keyscan $SERVER_IP >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          touch ssh_key
+          (echo "$SSH_PRIVATE_KEY") > ssh_key
+          chmod 600 ssh_key
+          npm install
+          npm run build
+          scp -r -i ssh_key ./build/* weasel@$SERVER_IP:/var/www/mindchase/campus
+    env:
+      SSH_PRIVATE_KEY: ${{secrets.SSH_KEY}}
+      SERVER_IP: ${{secrets.SERVER_IP}}
+      REACT_APP_API: ${{secrets.REACT_APP_API}}
+      CI: false
