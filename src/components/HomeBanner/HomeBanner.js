@@ -38,7 +38,7 @@ const HomeBanner = () => {
      <Hidden>
           <h1 className={classes.title}>Digital Campus</h1>
           <Button variant='contained' color='secondary'
-             to='/login'
+             to='/register'
              component={Link}  >
             join us
           </Button>
