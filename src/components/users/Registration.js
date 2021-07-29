@@ -29,11 +29,12 @@ const Registration=()=>{
         formState: { errors },
       } = useForm();
       const [wrongInput, setWrongInput] = useState(false);
-   
       const submit = async (data) => {
        
         try {
-          const result = await axios.post("http://localhost:3001/users/", data);
+          // const result = await axios.post("http://localhost:3001/users/", data);
+          const result = await axios.post(`${process.env.REACT_APP_API}/users/`, data)
+
           if (result.status === 200) {
             setOpen(true);
             console.log(data);

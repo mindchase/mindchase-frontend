@@ -34,6 +34,7 @@ const VideoPlayer =()=> {
         <AccordionDetails>
            
         <iframe
+        title="video"
             id="video"
             width="300"
             heigh="154"
