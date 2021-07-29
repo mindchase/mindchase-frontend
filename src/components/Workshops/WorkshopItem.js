@@ -87,7 +87,6 @@ const WorkshopItem = (props) => {
               gutterBottom
               align = 'center'    
             >
-              Fetch last updated: 01/2021
             </Typography>
             <Typography variant="h5" component="h2" 
                         className={classes.text1}

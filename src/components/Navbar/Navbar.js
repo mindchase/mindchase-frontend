@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DrawerComponent from "./DrawerComponent/DrawerComponent";
 import { Link } from "react-router-dom";
 import Logo from '../../images/logo.png'
+import { useHistory } from "react-router-dom";
 
 import {
   AppBar,
@@ -68,6 +69,10 @@ const Navbar = ({token, setToken}) => {
   const logOut = () => {
     setToken("")
   }
+  let history = useHistory();
+  function handleClick() {
+    history.push("/");
+  }
 
   return (
     <>
@@ -84,7 +89,10 @@ const Navbar = ({token, setToken}) => {
                 <>
                 <img   className={classes.Logo}
                           src={Logo}
-                          alt="logo"   
+                          alt="logo" 
+                          onClick={handleClick} 
+                          onChange={handleClickTab} 
+                          value={value}
                     />
         
                   <Tabs
@@ -124,13 +132,18 @@ const Navbar = ({token, setToken}) => {
                           component={Link}
                         />
 
+<Button
+                    aria-controls="menu"
+                    className={classes.account}
+                    variant="contained"
+                    color="secondary"
+                   href='https://mindchase.de'
+                    
 
-                        <Tab
-                          disableRipple
-                          label="HomePage"
-                          to='/about'
-                          component={Link}
-                        />
+                  >
+                    Go To Website Home
+                  </Button>
+               
                   </Tabs>
 
                   <Button
