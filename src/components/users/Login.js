@@ -7,10 +7,9 @@ import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios'
 import {useHistory} from  'react-router-dom'
 
-    // function loginUser(credentials) {
-    //     return axios.post('http://localhost:3001/users/login', credentials) 
-    // }
     function loginUser(credentials) {
+        // return axios.post('http://localhost:3001/users/login', credentials) 
+    // }
         return axios.post(`${process.env.REACT_APP_API}/users/login`, credentials) 
         }
 
@@ -80,7 +79,7 @@ const Login = ({ setToken }) => {
                         fullWidth>Login</Button>
 
                     <Typography > Do you have an account ?
-                        <Link href="Register" 
+                        <Link to="/register" 
                         type="submit"
                         color="red"
                         > Sign Up  </Link>
@@ -99,7 +98,7 @@ const Login = ({ setToken }) => {
     )
 }
 
-export default Login
+export default Login;
 
 
-
+    
