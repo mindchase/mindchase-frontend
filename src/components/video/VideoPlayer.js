@@ -96,7 +96,7 @@ const VideoPlayer =()=> {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography className={classes.heading}>Personation</Typography>
+          <Typography className={classes.heading}>Presentation</Typography>
           <Typography className={classes.secondaryHeading}>
           <h1>Time Management</h1>       
              </Typography>
