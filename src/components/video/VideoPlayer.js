@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     height:'80px',
 
-
   },
   icon: {
     verticalAlign: 'bottom',
@@ -53,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
 
 const VideoPlayer =()=> {
      const classes = useStyles();
@@ -111,15 +109,8 @@ const VideoPlayer =()=> {
                 > 
                 </iframe> 
         </AccordionDetails>
-      </Accordion>
-    
+      </Accordion> 
     </div>
     )
 }
-export default VideoPlayer
-
-
-
-
-
-
+export default VideoPlayer;

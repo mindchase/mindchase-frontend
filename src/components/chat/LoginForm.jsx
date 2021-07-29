@@ -5,7 +5,7 @@ const projectID = 'ba7aa1b8-baf9-487f-9006-59306ecc57c9';
 
 const Modal = () => {
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState('1234');
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
@@ -32,7 +32,7 @@ const Modal = () => {
         <h1 className="title">Chat Application</h1>
         <form onSubmit={handleSubmit}>
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="input" placeholder="Username" required />
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required />
+          {/* <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required /> */}
           <div align="center">
             <button type="submit" className="button">
               <span>Start chatting</span>
