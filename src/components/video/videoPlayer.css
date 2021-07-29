@@ -1,27 +1,26 @@
-.allVideo{
-    display: flex;
-justify-content:center ;
-margin:150px;
-position:relative;
-flex-direction:column;
-align-items:center
+.secondaryHeading{
+    position:relative !important; 
+    Top:50%;
+    left:50%;
+    transform: translate(-50%,0);
+  
 }
-.headerVideo{
-    justify-items: top;
-    margin : 0px;
-    padding:50px;
-}
-.input-video{
-    width:400px;
-    height:30px;
-}
-.video{
+
+#video{
     width:800px;
     height:400px;
+    position:relative;
+    Top:50%;
+    left:50%;
+    transform: translate(-50%,0);
+    
 }
 .pretention{
-    width:800px;
-    height:500px;
-    margin-top:50px
+    width:610px;
+    height:400px;
+    position:relative;
+    Top:50%;
+    left:50%;
+    transform: translate(-50%,0);
     
 }
