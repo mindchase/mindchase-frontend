@@ -12,7 +12,7 @@ import Fees from "./components/pages/Fees";
 import { ThemeProvider, CssBaseline, createTheme } from "@material-ui/core";
 import HomeBanner from "./components/HomeBanner/HomeBanner";
 import Navbar from "./components/Navbar/Navbar";
-import FooterComponent from "./components/FooterComponent/FooterComponent";
+//import FooterComponent from "./components/FooterComponent/FooterComponent";
 import Workshop from "./components/Workshops/WorkshopBody";
 import useToken from "./components/useToken";
 import Welcome from "./components/pages/Welcome";

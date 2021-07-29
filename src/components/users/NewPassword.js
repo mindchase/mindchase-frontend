@@ -7,7 +7,6 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 const NewPassword = ()=>{
 
     const { register, formState: { errors },handleSubmit} = useForm()
-
     const submit = (data) => {
         // send data to backend
         console.log(data)
@@ -26,8 +25,6 @@ const NewPassword = ()=>{
                         <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
                     <h2>Type a unique password</h2>
                 </Grid>
-
-            
                
                 <TextField label='Create New Password' placeholder='Enter password' type='password' fullWidth required
                 {...register("password", {required: true, minLength: 8})} />
@@ -36,8 +33,6 @@ const NewPassword = ()=>{
                 <TextField label='Confirm the New Password' placeholder='Enter password' type='password' fullWidth required
                 {...register("password", {required: true, minLength: 8})} />
                 {errors.password && <div>Confirm the New Password</div>}
-
-               
                                
                 <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Creat New Password</Button>
 
