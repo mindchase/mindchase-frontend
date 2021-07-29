@@ -1,6 +1,5 @@
 import React,{useState ,useEffect }from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import "./WorkshopBodyHeader.css";
 //import useToken from '../useToken';
 import Workshops from "../Workshops/Workshops";
 import axios from 'axios'
@@ -21,7 +20,7 @@ const WorkshopsBody = ({title}) => {
 
   useEffect(() => {
     const getCourses = async () => {
-      const response = await axios.get(`${process.env.REACT_APP_API}/courses`)
+      const response = await axios.get("http://localhost:3001/courses")
       setCourses(response.data)
     }
     getCourses()
